@@ -22,18 +22,6 @@ const Adapter = (config) => {
         }
     } = config;
 
-    var testFauna = faunaClient.query(
-        q.Create(q.Collection('test'), { data: { testField: 'testValue' } })
-    );
-
-    testFauna
-        .then(function (res) {
-            console.log(res.ref);
-        })
-        .catch(function (err) {
-            console.log(err);
-        });
-
     async function getAdapter(appOptions) {
         function _debug(debugCode, ...args) {
             console.info(`fauna_${debugCode}`, ...args);
