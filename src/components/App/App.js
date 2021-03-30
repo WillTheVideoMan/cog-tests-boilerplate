@@ -1,9 +1,12 @@
 import styled from 'styled-components';
 
+/**
+ * Ayo this do be an app.
+ */
 const App = () => {
     return (
         <>
-            <Title>This really do be the whole tho ngl bro.</Title>
+            <Title>This really do be the whole thing tho ngl bro.</Title>
         </>
     );
 };

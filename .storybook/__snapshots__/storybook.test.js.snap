@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots App Bruh Moment 1`] = `
+<h1
+  className="App__Title-hlrrig-0 bUeFgp"
+>
+  This really do be the whole thing tho ngl bro.
+</h1>
+`;
+
+exports[`Storyshots App Default 1`] = `
+<h1
+  className="App__Title-hlrrig-0 bUeFgp"
+>
+  This really do be the whole thing tho ngl bro.
+</h1>
+`;
