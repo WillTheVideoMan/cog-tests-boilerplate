@@ -7,7 +7,7 @@ const faunaClient = new faunadb.Client({
     secret: process.env.FAUNADB_SECRET_KEY,
     domain: process.env.FAUNADB_URL,
     scheme: process.env.FAUNADB_SCHEME,
-    port: 8443
+    port: process.env.FAUNADB_PORT
 });
 
 export default NextAuth({
