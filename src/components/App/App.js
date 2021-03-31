@@ -18,7 +18,7 @@ const App = () => {
             )}
             {session && (
                 <>
-                    Signed in as {session.user.email}
+                    Signed in as {session.user.id}
                     <br />
                     <button onClick={() => signOut()}>Sign Out</button>
                 </>

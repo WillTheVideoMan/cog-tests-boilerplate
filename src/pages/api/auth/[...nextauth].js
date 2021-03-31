@@ -1,14 +1,7 @@
 import NextAuth from 'next-auth';
 import Providers from 'next-auth/providers';
-import Adapters from '../../../lib/nextauth-fauna';
-import faunadb from 'faunadb';
-
-const faunaClient = new faunadb.Client({
-    secret: process.env.FAUNADB_SECRET_KEY,
-    domain: process.env.FAUNADB_URL,
-    scheme: process.env.FAUNADB_SCHEME,
-    port: process.env.FAUNADB_PORT
-});
+import FaunaAdapter from '../../../../auth/fauna-adapter';
+import faunaClient from '../../../../db/fauna-client';
 
 export default NextAuth({
     providers: [
@@ -29,10 +22,23 @@ export default NextAuth({
             from: process.env.EMAIL_FROM
         })
     ],
-    adapter: Adapters.Adapter({ faunaClient }),
+    adapter: FaunaAdapter.Adapter({ faunaClient }),
     session: {
         jwt: true,
         maxAge: 30 * 24 * 60 * 60 // 30 days
     },
-    secret: process.env.NEXTAUTH_SECRET
+    jwt: {
+        signingKey: process.env.NEXTAUTH_JWT_SIGNING_PRIVATE_KEY
+    },
+    secret: process.env.NEXTAUTH_SECRET,
+    callbacks: {
+        async jwt(token, user) {
+            if (user?.id) token.id = user.id;
+            return token;
+        },
+        async session(session, token) {
+            if (token?.id) session.user.id = token?.id;
+            return session;
+        }
+    }
 });
