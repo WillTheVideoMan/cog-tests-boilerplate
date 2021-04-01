@@ -1,11 +1,7 @@
-/**
- * Copy-pasted from https://github.com/nextauthjs/adapters/tree/canary/packages/fauna
- */
-
 import { query as q } from 'faunadb';
 import { createHash, randomBytes } from 'crypto';
 
-const Adapter = (config) => {
+function Adapter(config, options = {}) {
     const {
         faunaClient,
         collections = {
@@ -26,8 +22,8 @@ const Adapter = (config) => {
         const { logger } = appOptions;
 
         const defaultSessionMaxAge = 30 * 24 * 60 * 60;
-        const sessionMaxAge = (appOptions?.session?.maxAge ?? defaultSessionMaxAge) * 1000;
-        const sessionUpdateAge = (appOptions?.session?.updateAge ?? 0) * 1000;
+        const sessionMaxAge = (appOptions.session?.maxAge ?? defaultSessionMaxAge) * 1000;
+        const sessionUpdateAge = (appOptions.session?.updateAge ?? 0) * 1000;
 
         async function createUser(profile) {
             logger.debug('create_user', profile);
@@ -48,18 +44,20 @@ const Adapter = (config) => {
 
             try {
                 const { ref, data: user } = (await faunaClient.query(FQL)) || {};
+
                 const result = {
                     ...user,
                     id: ref.id,
-                    emailVerified: user?.emailVerified?.value,
-                    createdAt: user?.createdAt?.value,
-                    updatedAt: user?.updatedAt?.value
+                    emailVerified: user.emailVerified ? new Date(user.emailVerified.value) : null,
+                    createdAt: new Date(user.createdAt.value),
+                    updatedAt: new Date(user.updatedAt.value)
                 };
+
                 logger.debug('create_user_result', result);
                 return result;
             } catch (error) {
                 logger.error('create_user_error', error);
-                return Promise.reject(new Error('create_user_error', error));
+                return Promise.reject(new Error('create_user_error'));
             }
         }
 
@@ -70,18 +68,20 @@ const Adapter = (config) => {
 
             try {
                 const { ref, data: user } = (await faunaClient.query(FQL)) || {};
+
                 const result = {
                     ...user,
                     id: ref.id,
-                    emailVerified: user?.emailVerified?.value,
-                    createdAt: user?.createdAt?.value,
-                    updatedAt: user?.updatedAt?.value
+                    emailVerified: user.emailVerified ? new Date(user.emailVerified.value) : null,
+                    createdAt: new Date(user.createdAt.value),
+                    updatedAt: new Date(user.updatedAt.value)
                 };
+
                 logger.debug('get_user_result', result);
                 return result;
             } catch (error) {
                 logger.error('get_user_error', error);
-                return Promise.reject(new Error('get_user_error', error));
+                return Promise.reject(new Error('get_user_error'));
             }
         }
 
@@ -102,22 +102,23 @@ const Adapter = (config) => {
             try {
                 const { ref, data: user } = (await faunaClient.query(FQL)) || {};
 
-                if (user == null) {
+                if (!user) {
                     return null;
                 }
 
                 const result = {
                     ...user,
                     id: ref.id,
-                    emailVerified: user?.emailVerified?.value,
-                    createdAt: user?.createdAt?.value,
-                    updatedAt: user?.updatedAt?.value
+                    emailVerified: user.emailVerified ? new Date(user.emailVerified.value) : null,
+                    createdAt: new Date(user.createdAt.value),
+                    updatedAt: new Date(user.updatedAt.value)
                 };
+
                 logger.debug('get_user_by_email_result', result);
                 return result;
             } catch (error) {
                 logger.error('get_user_by_email_error', error);
-                return Promise.reject(new Error('get_user_by_email_error', error));
+                return Promise.reject(new Error('get_user_by_email_error'));
             }
         }
 
@@ -143,68 +144,73 @@ const Adapter = (config) => {
             try {
                 const { ref, data: user } = (await faunaClient.query(FQL)) || {};
 
-                if (user == null) {
+                if (!user) {
                     return null;
                 }
 
                 const result = {
                     ...user,
                     id: ref.id,
-                    emailVerified: user?.emailVerified?.value,
-                    createdAt: user?.createdAt?.value,
-                    updatedAt: user?.updatedAt?.value
+                    emailVerified: user.emailVerified ? new Date(user.emailVerified.value) : null,
+                    createdAt: new Date(user.createdAt.value),
+                    updatedAt: new Date(user.updatedAt.value)
                 };
+
                 logger.debug('get_user_by_provider_account_id_result', result);
                 return result;
             } catch (error) {
                 logger.error('get_user_by_provider_account_id_error', error);
-                return Promise.reject(new Error('get_user_by_provider_account_id_error', error));
+                return Promise.reject(new Error('get_user_by_provider_account_id_error'));
             }
         }
 
-        async function updateUser(oldUser) {
-            logger.debug('update_user', oldUser);
+        async function updateUser(user) {
+            logger.debug('update_user', user);
 
-            const FQL = q.Update(q.Ref(q.Collection(collections.User), oldUser.id), {
+            const FQL = q.Update(q.Ref(q.Collection(collections.User), user.id), {
                 data: {
-                    name: oldUser.name,
-                    email: oldUser.email,
-                    image: oldUser.image,
-                    emailVerified: oldUser.emailVerified
-                        ? q.Time(oldUser.emailVerified.toISOString())
+                    name: user.name,
+                    email: user.email,
+                    image: user.image,
+                    emailVerified: user.emailVerified
+                        ? q.Time(user.emailVerified.toISOString())
                         : null,
-                    username: oldUser.username,
+                    username: user.username,
                     updatedAt: q.Now()
                 }
             });
 
             try {
-                const { ref, data: user } = (await faunaClient.query(FQL)) || {};
+                const { ref, data: updatedUser } = (await faunaClient.query(FQL)) || {};
+
                 const result = {
-                    ...user,
+                    ...updatedUser,
                     id: ref.id,
-                    emailVerified: user?.emailVerified?.value,
-                    createdAt: user?.createdAt?.value,
-                    updatedAt: user?.updatedAt?.value
+                    emailVerified: updatedUser.emailVerified
+                        ? new Date(updatedUser.emailVerified.value)
+                        : null,
+                    createdAt: new Date(updatedUser.createdAt.value),
+                    updatedAt: new Date(updatedUser.updatedAt.value)
                 };
+
                 logger.debug('update_user_result', result);
                 return result;
             } catch (error) {
                 logger.error('update_user_error', error);
-                return Promise.reject(new Error('update_user_error', error));
+                return Promise.reject(new Error('update_user_error'));
             }
         }
 
-        async function deleteUser(id) {
-            logger.debug('delete_user', id);
+        async function deleteUser(userId) {
+            logger.debug('delete_user', userId);
 
-            const FQL = q.Delete(q.Ref(q.Collection(collections.User), id));
+            const FQL = q.Delete(q.Ref(q.Collection(collections.User), userId));
 
             try {
                 return await faunaClient.query(FQL);
             } catch (error) {
                 logger.error('delete_user_error', error);
-                return Promise.reject(new Error('delete_user_error', error));
+                return Promise.reject(new Error('delete_user_error'));
             }
         }
 
@@ -243,18 +249,10 @@ const Adapter = (config) => {
             });
 
             try {
-                const { ref, data: account } = (await faunaClient.query(FQL)) || {};
-                const result = {
-                    ...account,
-                    id: ref.id,
-                    createdAt: account?.createdAt?.value,
-                    updatedAt: account?.updatedAt?.value
-                };
-                logger.debug('link_account_result', result);
-                return result;
+                return await faunaClient.query(FQL);
             } catch (error) {
                 logger.error('link_account_error', error);
-                return Promise.reject(new Error('link_account_error', error));
+                return Promise.reject(new Error('link_account_error'));
             }
         }
 
@@ -272,19 +270,16 @@ const Adapter = (config) => {
                 return await faunaClient.query(FQL);
             } catch (error) {
                 logger.error('unlink_account_error', error);
-                return Promise.reject(new Error('unlink_account_error', error));
+                return Promise.reject(new Error('unlink_account_error'));
             }
         }
 
         async function createSession(user) {
             logger.debug('create_session', user);
 
-            let expires = null;
-            if (sessionMaxAge) {
-                const dateExpires = new Date();
-                dateExpires.setTime(dateExpires.getTime() + sessionMaxAge);
-                expires = dateExpires.toISOString();
-            }
+            const dateExpires = new Date();
+            dateExpires.setTime(dateExpires.getTime() + sessionMaxAge);
+            const expires = dateExpires.toISOString();
 
             const FQL = q.Create(q.Collection(collections.Session), {
                 data: {
@@ -303,15 +298,16 @@ const Adapter = (config) => {
                 const result = {
                     ...session,
                     id: ref.id,
-                    expires: session.expires.value,
-                    createdAt: session.createdAt.value,
-                    updatedAt: session.updatedAt.value
+                    expires: new Date(session.expires.value),
+                    createdAt: new Date(session.createdAt.value),
+                    updatedAt: new Date(session.updatedAt.value)
                 };
+
                 logger.debug('create_session_result', result);
                 return result;
             } catch (error) {
                 logger.error('create_session_error', error);
-                return Promise.reject(new Error('create_session_error', error));
+                return Promise.reject(new Error('create_session_error'));
             }
         }
 
@@ -328,8 +324,12 @@ const Adapter = (config) => {
             try {
                 const { ref, data: session } = (await faunaClient.query(FQL)) || {};
 
+                if (!session) {
+                    return null;
+                }
+
                 // Check session has not expired (do not return it if it has)
-                if (session?.expires?.value && Date.now() > Date.parse(session.expires.value)) {
+                if (session.expires && Date.now() > Date.parse(session.expires.value)) {
                     await faunaClient.query(q.Delete(ref));
                     return null;
                 }
@@ -337,23 +337,24 @@ const Adapter = (config) => {
                 const result = {
                     ...session,
                     id: ref.id,
-                    expires: session.expires.value,
-                    createdAt: session.createdAt.value,
-                    updatedAt: session.updatedAt.value
+                    expires: new Date(session.expires.value),
+                    createdAt: new Date(session.createdAt.value),
+                    updatedAt: new Date(session.updatedAt.value)
                 };
+
                 logger.debug('get_session_result', result);
                 return result;
             } catch (error) {
                 logger.error('get_session_error', error);
-                return Promise.reject(new Error('get_session_error', error));
+                return Promise.reject(new Error('get_session_error'));
             }
         }
 
-        async function updateSession(oldSession, force) {
-            logger.debug('update_session', oldSession);
+        async function updateSession(session, force) {
+            logger.debug('update_session', session);
 
             const shouldUpdate =
-                sessionMaxAge && (sessionUpdateAge || sessionUpdateAge === 0) && oldSession.expires;
+                sessionMaxAge && (sessionUpdateAge || sessionUpdateAge === 0) && session.expires;
             if (!shouldUpdate && !force) {
                 return null;
             }
@@ -364,7 +365,7 @@ const Adapter = (config) => {
             //
             // Default for sessionMaxAge is 30 days.
             // Default for sessionUpdateAge is 1 hour.
-            const dateSessionIsDueToBeUpdated = new Date(oldSession.expires);
+            const dateSessionIsDueToBeUpdated = new Date(session.expires);
             dateSessionIsDueToBeUpdated.setTime(
                 dateSessionIsDueToBeUpdated.getTime() - sessionMaxAge
             );
@@ -382,7 +383,7 @@ const Adapter = (config) => {
             const newExpiryDate = new Date();
             newExpiryDate.setTime(newExpiryDate.getTime() + sessionMaxAge);
 
-            const FQL = q.Update(q.Ref(q.Collection(collections.Session), oldSession.id), {
+            const FQL = q.Update(q.Ref(q.Collection(collections.Session), session.id), {
                 data: {
                     expires: q.Time(newExpiryDate.toISOString()),
                     updatedAt: q.Time(new Date().toISOString())
@@ -390,19 +391,21 @@ const Adapter = (config) => {
             });
 
             try {
-                const { ref, data: session } = (await faunaClient.query(FQL)) || {};
+                const { ref, data: updatedSession } = (await faunaClient.query(FQL)) || {};
+
                 const result = {
-                    ...session,
+                    ...updatedSession,
                     id: ref.id,
-                    expires: session.expires.value,
-                    createdAt: session.createdAt.value,
-                    updatedAt: session.updatedAt.value
+                    expires: new Date(updatedSession.expires.value),
+                    createdAt: new Date(updatedSession.createdAt.value),
+                    updatedAt: new Date(updatedSession.updatedAt.value)
                 };
+
                 logger.debug('update_session_result', result);
                 return result;
             } catch (error) {
                 logger.error('update_session_error', error);
-                return Promise.reject(new Error('update_session_error', error));
+                return Promise.reject(new Error('update_session_error'));
             }
         }
 
@@ -417,7 +420,7 @@ const Adapter = (config) => {
                 return await faunaClient.query(FQL);
             } catch (error) {
                 logger.error('delete_session_error', error);
-                return Promise.reject(new Error('delete_session_error', error));
+                return Promise.reject(new Error('delete_session_error'));
             }
         }
 
@@ -444,7 +447,7 @@ const Adapter = (config) => {
                 data: {
                     identifier: identifier,
                     token: hashedToken,
-                    expires: expires === null ? null : q.Time(expires),
+                    expires: expires ? q.Time(expires) : null,
                     createdAt: q.Now(),
                     updatedAt: q.Now()
                 }
@@ -466,19 +469,22 @@ const Adapter = (config) => {
                 const result = {
                     ...verificationRequest,
                     id: ref.id,
-                    expires: verificationRequest.expires.value,
-                    createdAt: verificationRequest.createdAt.value,
-                    updatedAt: verificationRequest.updatedAt.value
+                    expires: verificationRequest.expires
+                        ? new Date(verificationRequest.expires.value)
+                        : null,
+                    createdAt: new Date(verificationRequest.createdAt.value),
+                    updatedAt: new Date(verificationRequest.updatedAt.value)
                 };
+
                 logger.debug('create_verification_request_result', result);
                 return result;
             } catch (error) {
                 logger.error('create_verification_request_error', error);
-                return Promise.reject(new Error('create_verification_request_error', error));
+                return Promise.reject(new Error('create_verification_request_error'));
             }
         }
 
-        async function getVerificationRequest(identifier, token, secret) {
+        async function getVerificationRequest(identifier, token, secret, provider) {
             logger.debug('get_verification_request', identifier, token);
 
             const hashedToken = createHash('sha256').update(`${token}${secret}`).digest('hex');
@@ -493,8 +499,12 @@ const Adapter = (config) => {
             try {
                 const { ref, data: verificationRequest } = (await faunaClient.query(FQL)) || {};
 
+                if (!verificationRequest) {
+                    return null;
+                }
+
                 if (
-                    verificationRequest?.expires?.value &&
+                    verificationRequest.expires &&
                     Date.now() > Date.parse(verificationRequest.expires.value)
                 ) {
                     // Delete the expired request so it cannot be used
@@ -505,23 +515,25 @@ const Adapter = (config) => {
                 const result = {
                     ...verificationRequest,
                     id: ref.id,
-                    expires: verificationRequest.expires.value,
-                    createdAt: verificationRequest.createdAt.value,
-                    updatedAt: verificationRequest.updatedAt.value
+                    expires: verificationRequest.expires
+                        ? new Date(verificationRequest.expires.value)
+                        : null,
+                    createdAt: new Date(verificationRequest.createdAt.value),
+                    updatedAt: new Date(verificationRequest.updatedAt.value)
                 };
+
                 logger.debug('get_verification_request_result', result);
                 return result;
             } catch (error) {
                 logger.error('get_verification_request_error', error);
-                return Promise.reject(new Error('get_verification_request_error', error));
+                return Promise.reject(new Error('get_verification_request_error'));
             }
         }
 
-        async function deleteVerificationRequest(identifier, token, secret) {
+        async function deleteVerificationRequest(identifier, token, secret, provider) {
             logger.debug('delete_verification_request', identifier, token);
 
             const hashedToken = createHash('sha256').update(`${token}${secret}`).digest('hex');
-
             const FQL = q.Delete(
                 q.Select('ref', q.Get(q.Match(q.Index(indexes.VerificationRequest), hashedToken)))
             );
@@ -530,11 +542,11 @@ const Adapter = (config) => {
                 return await faunaClient.query(FQL);
             } catch (error) {
                 logger.error('delete_verification_error', error);
-                return Promise.reject(new Error('delete_verification_error', error));
+                return Promise.reject(new Error('delete_verification_error'));
             }
         }
 
-        return Promise.resolve({
+        return {
             createUser,
             getUser,
             getUserByEmail,
@@ -550,13 +562,13 @@ const Adapter = (config) => {
             createVerificationRequest,
             getVerificationRequest,
             deleteVerificationRequest
-        });
+        };
     }
 
     return {
         getAdapter
     };
-};
+}
 
 export default {
     Adapter
