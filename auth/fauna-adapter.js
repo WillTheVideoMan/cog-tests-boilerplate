@@ -1,7 +1,7 @@
 import { query as q } from 'faunadb';
 import { createHash, randomBytes } from 'crypto';
 
-function Adapter(config, options = {}) {
+function Adapter(config) {
     const {
         faunaClient,
         collections = {
@@ -456,6 +456,8 @@ function Adapter(config, options = {}) {
             try {
                 const { ref, data: verificationRequest } = (await faunaClient.query(FQL)) || {};
 
+                console.log(verificationRequest);
+
                 // With the verificationCallback on a provider, you can send an email, or queue
                 // an email to be sent, or perform some other action (e.g. send a text message)
                 await sendVerificationRequest({
@@ -484,14 +486,14 @@ function Adapter(config, options = {}) {
             }
         }
 
-        async function getVerificationRequest(identifier, token, secret, provider) {
+        async function getVerificationRequest(identifier, token, secret) {
             logger.debug('get_verification_request', identifier, token);
 
             const hashedToken = createHash('sha256').update(`${token}${secret}`).digest('hex');
 
             const FQL = q.Let(
                 {
-                    ref: q.Match(q.Index(indexes.VerificationRequest), hashedToken)
+                    ref: q.Match(q.Index(indexes.VerificationRequest), [hashedToken, identifier])
                 },
                 q.If(q.Exists(q.Var('ref')), q.Get(q.Var('ref')), null)
             );
@@ -530,12 +532,15 @@ function Adapter(config, options = {}) {
             }
         }
 
-        async function deleteVerificationRequest(identifier, token, secret, provider) {
+        async function deleteVerificationRequest(identifier, token, secret) {
             logger.debug('delete_verification_request', identifier, token);
 
             const hashedToken = createHash('sha256').update(`${token}${secret}`).digest('hex');
             const FQL = q.Delete(
-                q.Select('ref', q.Get(q.Match(q.Index(indexes.VerificationRequest), hashedToken)))
+                q.Select(
+                    'ref',
+                    q.Get(q.Match(q.Index(indexes.VerificationRequest), [hashedToken, identifier]))
+                )
             );
 
             try {
