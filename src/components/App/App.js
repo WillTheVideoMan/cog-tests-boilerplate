@@ -20,6 +20,11 @@ const App = () => {
                 <>
                     Signed in as {session.user.id}
                     <br />
+                    Roles: {session.user.roles}
+                    <br />
+                    <a href="/api/admin/gate-example">Click here</a> to see if you are a super
+                    secret dude admin.
+                    <br />
                     <button onClick={() => signOut()}>Sign Out</button>
                 </>
             )}

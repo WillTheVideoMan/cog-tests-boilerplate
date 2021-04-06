@@ -16,7 +16,7 @@ function Adapter(config) {
             Session: 'session_by_token',
             VerificationRequest: 'verification_request_by_token'
         }
-    } = config;
+    } = config || {};
 
     async function getAdapter(appOptions) {
         const { logger } = appOptions;
@@ -38,7 +38,8 @@ function Adapter(config) {
                         : null,
                     username: profile.username,
                     createdAt: q.Now(),
-                    updatedAt: q.Now()
+                    updatedAt: q.Now(),
+                    roles: ['user']
                 }
             });
 
