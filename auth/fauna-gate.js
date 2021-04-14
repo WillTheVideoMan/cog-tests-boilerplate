@@ -59,8 +59,8 @@ const Gate = async (userId, faunaClient) => {
         const missing = (roles) => roles.filter((role) => !user.roles.includes(role));
 
         return { allows, all, any, missing };
-    } catch {
-        return Promise.reject(new Error('gate_error_fetching_user'));
+    } catch (error) {
+        return Promise.reject(error);
     }
 };
 

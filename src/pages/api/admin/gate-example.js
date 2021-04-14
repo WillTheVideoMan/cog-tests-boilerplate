@@ -1,8 +1,11 @@
 import Gate from '../../../../auth/fauna-gate';
 import client from '../../../../db/fauna-client';
 import { getSession } from 'next-auth/client';
+import { initSentry, withSentry } from '../../../../utils/sentry';
 
-export default async (req, res) => {
+initSentry();
+
+export default withSentry(async (req, res) => {
     const session = await getSession({ req });
 
     if (session) {
@@ -23,4 +26,4 @@ export default async (req, res) => {
         res.status(401).json({ message: 'unauthorized' });
     }
     res.end();
-};
+});
