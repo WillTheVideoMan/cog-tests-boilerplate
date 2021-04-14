@@ -57,9 +57,9 @@ const App = () => {
                 </ErrorTrigger>
             </Area>
             <Area>
+                <Label>Authentication</Label>
                 {!session && !loading && (
                     <>
-                        <Label>Authentication</Label>
                         Not signed in
                         <br />
                         <button onClick={() => signIn()}>Sign In</button>
