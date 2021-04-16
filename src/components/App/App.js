@@ -71,7 +71,7 @@ const App = () => {
 
                 {loading && (
                     <ul>
-                        <li>Loading..</li>.
+                        <li>Loading...</li>
                     </ul>
                 )}
             </Area>
