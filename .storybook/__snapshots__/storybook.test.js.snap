@@ -7,40 +7,91 @@ exports[`Storyshots App Bruh Moment 1`] = `
   <h1
     className="App__Title-hlrrig-0 knrMkJ"
   >
-    Cognitive Tests Boilerplate Functions
+    Cognitive Tests Boilerplate
   </h1>
   <div
     className="App__Area-hlrrig-1 dgSXVl"
   >
     <p
-      className="App__Label-hlrrig-2 iKGSIM"
+      className="App__Label-hlrrig-2 epEudq"
     >
-      Sentry
+      Authentication
     </p>
-    <a
-      href="/api/admin/sentry-example"
-    >
-      Visit Here
-    </a>
-     to send an API request test error to Sentry.
-    <br />
-    Click to trigger a client-side error:
-    <button
-      className="App__ErrorTrigger-hlrrig-4 dCUbC"
-      onClick={[Function]}
-    >
-      Trigger
-    </button>
+    <ul>
+      <li>
+        Loading..
+      </li>
+      .
+    </ul>
   </div>
   <div
     className="App__Area-hlrrig-1 dgSXVl"
   >
     <p
-      className="App__Label-hlrrig-2 iKGSIM"
+      className="App__Label-hlrrig-2 epEudq"
     >
-      Authentication
+      Sentry
     </p>
-    Loading...
+    <ul>
+      <li>
+        <a
+          href="/api/admin/sentry-example"
+        >
+          Visit Here
+        </a>
+         to send an API request test error to Sentry.
+      </li>
+      <li>
+        Click to trigger a client-side error:
+        <button
+          className="App__ErrorTrigger-hlrrig-4 dCUbC"
+          onClick={[Function]}
+        >
+          Trigger
+        </button>
+      </li>
+    </ul>
+  </div>
+  <div
+    className="App__Area-hlrrig-1 dgSXVl"
+  >
+    <p
+      className="App__Label-hlrrig-2 epEudq"
+    >
+      Storybook
+    </p>
+    <a
+      href="https://willthevideoman.github.io/cog-tests-boilerplate/"
+    >
+      Visit Here
+    </a>
+     to see the Storybook Docs.
+  </div>
+  <div
+    className="App__Area-hlrrig-1 dgSXVl"
+  >
+    <p
+      className="App__Label-hlrrig-2 epEudq"
+    >
+      Deployment Pipeline
+    </p>
+    <ul>
+      <li>
+        Linting from ESLint
+      </li>
+      <li>
+        Formatting from Prettier
+      </li>
+      <li>
+        Testing from Jest
+      </li>
+      <li>
+         Hosting from Vercel
+      </li>
+      <li>
+        Data from FaunaDB
+      </li>
+    </ul>
   </div>
 </div>
 `;
@@ -52,40 +103,91 @@ exports[`Storyshots App Default 1`] = `
   <h1
     className="App__Title-hlrrig-0 knrMkJ"
   >
-    Cognitive Tests Boilerplate Functions
+    Cognitive Tests Boilerplate
   </h1>
   <div
     className="App__Area-hlrrig-1 dgSXVl"
   >
     <p
-      className="App__Label-hlrrig-2 iKGSIM"
+      className="App__Label-hlrrig-2 epEudq"
     >
-      Sentry
+      Authentication
     </p>
-    <a
-      href="/api/admin/sentry-example"
-    >
-      Visit Here
-    </a>
-     to send an API request test error to Sentry.
-    <br />
-    Click to trigger a client-side error:
-    <button
-      className="App__ErrorTrigger-hlrrig-4 dCUbC"
-      onClick={[Function]}
-    >
-      Trigger
-    </button>
+    <ul>
+      <li>
+        Loading..
+      </li>
+      .
+    </ul>
   </div>
   <div
     className="App__Area-hlrrig-1 dgSXVl"
   >
     <p
-      className="App__Label-hlrrig-2 iKGSIM"
+      className="App__Label-hlrrig-2 epEudq"
     >
-      Authentication
+      Sentry
     </p>
-    Loading...
+    <ul>
+      <li>
+        <a
+          href="/api/admin/sentry-example"
+        >
+          Visit Here
+        </a>
+         to send an API request test error to Sentry.
+      </li>
+      <li>
+        Click to trigger a client-side error:
+        <button
+          className="App__ErrorTrigger-hlrrig-4 dCUbC"
+          onClick={[Function]}
+        >
+          Trigger
+        </button>
+      </li>
+    </ul>
+  </div>
+  <div
+    className="App__Area-hlrrig-1 dgSXVl"
+  >
+    <p
+      className="App__Label-hlrrig-2 epEudq"
+    >
+      Storybook
+    </p>
+    <a
+      href="https://willthevideoman.github.io/cog-tests-boilerplate/"
+    >
+      Visit Here
+    </a>
+     to see the Storybook Docs.
+  </div>
+  <div
+    className="App__Area-hlrrig-1 dgSXVl"
+  >
+    <p
+      className="App__Label-hlrrig-2 epEudq"
+    >
+      Deployment Pipeline
+    </p>
+    <ul>
+      <li>
+        Linting from ESLint
+      </li>
+      <li>
+        Formatting from Prettier
+      </li>
+      <li>
+        Testing from Jest
+      </li>
+      <li>
+         Hosting from Vercel
+      </li>
+      <li>
+        Data from FaunaDB
+      </li>
+    </ul>
   </div>
 </div>
 `;
