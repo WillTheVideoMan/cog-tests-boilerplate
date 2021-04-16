@@ -19,9 +19,8 @@ exports[`Storyshots App Bruh Moment 1`] = `
     </p>
     <ul>
       <li>
-        Loading..
+        Loading...
       </li>
-      .
     </ul>
   </div>
   <div
@@ -115,9 +114,8 @@ exports[`Storyshots App Default 1`] = `
     </p>
     <ul>
       <li>
-        Loading..
+        Loading...
       </li>
-      .
     </ul>
   </div>
   <div
