@@ -18,8 +18,10 @@ const Label = styled.p`
     position: absolute;
     top: -12px;
     background: white;
-    padding-left: 8px;
-    padding-right: 8px;
+    padding-left: 4px;
+    margin-left: -4px;
+    padding-right: 4px;
+    font-weight: bold;
 `;
 
 const Wrapper = styled.div`
@@ -42,43 +44,69 @@ const App = () => {
     const [session, loading] = useSession();
     return (
         <Wrapper>
-            <Title>Cognitive Tests Boilerplate Functions</Title>
-            <Area>
-                <Label>Sentry</Label>
-                <a href="/api/admin/sentry-example">Visit Here</a> to send an API request test error
-                to Sentry.
-                <br />
-                Click to trigger a client-side error:
-                <ErrorTrigger
-                    onClick={() => {
-                        throw new Error('A Client-side Error that Sentry will see.');
-                    }}>
-                    Trigger
-                </ErrorTrigger>
-            </Area>
+            <Title>Cognitive Tests Boilerplate</Title>
             <Area>
                 <Label>Authentication</Label>
                 {!session && !loading && (
-                    <>
-                        Not signed in
-                        <br />
-                        <button onClick={() => signIn()}>Sign In</button>
-                    </>
+                    <ul>
+                        <li>Not signed in</li>
+                        <li>
+                            <button onClick={() => signIn()}>Sign In</button>
+                        </li>
+                    </ul>
                 )}
                 {session && (
-                    <>
-                        Signed in as {session.user.id}
-                        <br />
-                        Roles: {session.user.roles}
-                        <br />
-                        <a href="/api/admin/gate-example">Visit here</a> to see if you are a super
-                        secret dude admin.
-                        <br />
-                        <button onClick={() => signOut()}>Sign Out</button>
-                    </>
+                    <ul>
+                        <li>Signed in as {session.user.id}</li>
+                        <li>Roles: {session.user.roles}</li>
+                        <li>
+                            <a href="/api/admin/gate-example">Visit here</a> to see if you are a
+                            super secret admin.
+                        </li>
+                        <li>
+                            <button onClick={() => signOut()}>Sign Out</button>
+                        </li>
+                    </ul>
                 )}
 
-                {loading && <>Loading...</>}
+                {loading && (
+                    <ul>
+                        <li>Loading..</li>.
+                    </ul>
+                )}
+            </Area>
+            <Area>
+                <Label>Sentry</Label>
+                <ul>
+                    <li>
+                        <a href="/api/admin/sentry-example">Visit Here</a> to send an API request
+                        test error to Sentry.
+                    </li>
+                    <li>
+                        Click to trigger a client-side error:
+                        <ErrorTrigger
+                            onClick={() => {
+                                throw new Error('A Client-side Error that Sentry will see.');
+                            }}>
+                            Trigger
+                        </ErrorTrigger>
+                    </li>
+                </ul>
+            </Area>
+            <Area>
+                <Label>Storybook</Label>
+                <a href="https://willthevideoman.github.io/cog-tests-boilerplate/">Visit Here</a> to
+                see the Storybook Docs.
+            </Area>
+            <Area>
+                <Label>Deployment Pipeline</Label>
+                <ul>
+                    <li>Linting from ESLint</li>
+                    <li>Formatting from Prettier</li>
+                    <li>Testing from Jest</li>
+                    <li> Hosting from Vercel</li>
+                    <li>Data from FaunaDB</li>
+                </ul>
             </Area>
         </Wrapper>
     );
