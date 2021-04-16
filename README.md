@@ -1,5 +1,8 @@
 # Cognitive Tests Boilerplate
 
+![Unit tests](https://github.com/WillTheVideoMan/cog-tests-boilerplate/workflows/Unit/badge.svg)
+![Linting](https://github.com/WillTheVideoMan/cog-tests-boilerplate/workflows/Lint/badge.svg)
+
 A boilerplate framework for the cognitive testing platform
 
 [Visit Demo](https://cog-tests-boilerplate.vercel.app/)
@@ -7,6 +10,7 @@ A boilerplate framework for the cognitive testing platform
 ### Frameworks
 
 -   `nextjs` react framework
+-   `styled-components` styling
 -   `next-auth` authentication
 -   `sentry` monitoring
 -   `storybook` component development
@@ -14,7 +18,7 @@ A boilerplate framework for the cognitive testing platform
 -   `vercel` edge hosting
 -   `eslint` linting
 -   `prettier` formatting
--   `jest` testing with `storyshots`
+-   `jest` using `enzyme` with `storyshots`
 
 ## Env
 
