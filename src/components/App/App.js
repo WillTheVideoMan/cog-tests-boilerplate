@@ -23,8 +23,6 @@ const Label = styled.p`
     margin-left: -4px;
     padding-right: 8px;
     font-weight: bold;
-    border: 2px dashed black;
-    border-radius: 8px;
 `;
 
 const Wrapper = styled.div`

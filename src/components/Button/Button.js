@@ -4,6 +4,10 @@ import Spinner from '../Spinner';
 
 const Wrapper = styled.button`
     position: relative;
+    display: var(--button-display);
+    width: var(--button-width);
+
+    margin: 0;
     padding: 8px 16px;
     border: none;
     border-radius: 4px;
@@ -76,15 +80,30 @@ const STATES = {
     }
 };
 
-const Button = ({ handleClick, variant, loading, children, ...delegated }) => {
-    const wrappperStyles = VARIANTS[variant];
-    const childrenStyles = STATES[loading ? 'loading' : 'active'];
+const WIDTHS = {
+    fullWidth: {
+        '--button-display': 'block',
+        '--button-width': '100%'
+    },
+    content: {
+        '--button-display': 'inline',
+        '--button-width': 'auto'
+    }
+};
 
-    if (!wrappperStyles) throw new Error(`No button variant found for variant: ${variant}`);
+const Button = ({ handleClick, variant, loading, fullWidth, children, ...delegated }) => {
+    const variantStyles = VARIANTS[variant];
+    if (!variantStyles) throw new Error(`No button variant found for variant: ${variant}`);
+
+    const styles = {
+        ...variantStyles,
+        ...STATES[loading ? 'loading' : 'active'],
+        ...WIDTHS[fullWidth ? 'fullWidth' : 'content']
+    };
 
     return (
-        <Wrapper {...delegated} style={wrappperStyles} onClick={handleClick}>
-            <ChildrenWrapper style={childrenStyles}>{children}</ChildrenWrapper>
+        <Wrapper {...delegated} style={styles} onClick={handleClick}>
+            <ChildrenWrapper>{children}</ChildrenWrapper>
             {loading && (
                 <SpinnerWrapper>
                     <Spinner size={24} />
