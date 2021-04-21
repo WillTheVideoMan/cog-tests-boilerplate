@@ -13,7 +13,7 @@ exports[`Storyshots App Default 1`] = `
     className="App__Area-hlrrig-1 dgSXVl"
   >
     <p
-      className="App__Label-hlrrig-2 sOOEt"
+      className="App__Label-hlrrig-2 curani"
     >
       Authentication
     </p>
@@ -27,7 +27,7 @@ exports[`Storyshots App Default 1`] = `
     className="App__Area-hlrrig-1 dgSXVl"
   >
     <p
-      className="App__Label-hlrrig-2 sOOEt"
+      className="App__Label-hlrrig-2 curani"
     >
       Sentry
     </p>
@@ -45,7 +45,7 @@ exports[`Storyshots App Default 1`] = `
       </li>
       <li>
         <button
-          className="Button__Wrapper-sc-8y2ppg-0 eGtjch"
+          className="Button__Wrapper-sc-8y2ppg-0 gwDBuW"
           onClick={[Function]}
           style={
             Object {
@@ -54,16 +54,14 @@ exports[`Storyshots App Default 1`] = `
               "--button-box-shadow--hover": "0px 1.5px 3.2px rgba(0, 0, 0, 0.04), 0px 5.1px 10.7px rgba(0, 0, 0, 0.06), 0px 24px 48px rgba(0, 0, 0, 0.1)",
               "--button-color": "hsl(0deg, 0%, 100%)",
               "--button-cursor": "pointer",
+              "--button-display": "block",
+              "--button-width": "100%",
+              "--children-opacity": 1,
             }
           }
         >
           <div
             className="Button__ChildrenWrapper-sc-8y2ppg-1 dicEjq"
-            style={
-              Object {
-                "--children-opacity": 1,
-              }
-            }
           >
             Trigger
           </div>
@@ -75,7 +73,7 @@ exports[`Storyshots App Default 1`] = `
     className="App__Area-hlrrig-1 dgSXVl"
   >
     <p
-      className="App__Label-hlrrig-2 sOOEt"
+      className="App__Label-hlrrig-2 curani"
     >
       Storybook
     </p>
@@ -90,7 +88,7 @@ exports[`Storyshots App Default 1`] = `
     className="App__Area-hlrrig-1 dgSXVl"
   >
     <p
-      className="App__Label-hlrrig-2 sOOEt"
+      className="App__Label-hlrrig-2 curani"
     >
       Deployment Pipeline
     </p>
@@ -117,7 +115,7 @@ exports[`Storyshots App Default 1`] = `
 
 exports[`Storyshots Button Confirm 1`] = `
 <button
-  className="Button__Wrapper-sc-8y2ppg-0 eGtjch"
+  className="Button__Wrapper-sc-8y2ppg-0 gwDBuW"
   style={
     Object {
       "--button-background-color": "hsl(121deg, 90%, 81%)",
@@ -125,16 +123,14 @@ exports[`Storyshots Button Confirm 1`] = `
       "--button-box-shadow--hover": "0px 1.5px 3.2px rgba(0, 0, 0, 0.04), 0px 5.1px 10.7px rgba(0, 0, 0, 0.06), 0px 24px 48px rgba(0, 0, 0, 0.1)",
       "--button-color": "hsl(0deg, 0%, 20%)",
       "--button-cursor": "pointer",
+      "--button-display": "inline",
+      "--button-width": "auto",
+      "--children-opacity": 1,
     }
   }
 >
   <div
     className="Button__ChildrenWrapper-sc-8y2ppg-1 dicEjq"
-    style={
-      Object {
-        "--children-opacity": 1,
-      }
-    }
   >
     Confirm
   </div>
@@ -143,7 +139,7 @@ exports[`Storyshots Button Confirm 1`] = `
 
 exports[`Storyshots Button Danger 1`] = `
 <button
-  className="Button__Wrapper-sc-8y2ppg-0 eGtjch"
+  className="Button__Wrapper-sc-8y2ppg-0 gwDBuW"
   style={
     Object {
       "--button-background-color": "hsl(356deg, 74%, 52%)",
@@ -151,16 +147,14 @@ exports[`Storyshots Button Danger 1`] = `
       "--button-box-shadow--hover": "0px 1.5px 3.2px rgba(0, 0, 0, 0.04), 0px 5.1px 10.7px rgba(0, 0, 0, 0.06), 0px 24px 48px rgba(0, 0, 0, 0.1)",
       "--button-color": "hsl(0deg, 0%, 100%)",
       "--button-cursor": "pointer",
+      "--button-display": "inline",
+      "--button-width": "auto",
+      "--children-opacity": 1,
     }
   }
 >
   <div
     className="Button__ChildrenWrapper-sc-8y2ppg-1 dicEjq"
-    style={
-      Object {
-        "--children-opacity": 1,
-      }
-    }
   >
     Danger
   </div>
@@ -169,7 +163,7 @@ exports[`Storyshots Button Danger 1`] = `
 
 exports[`Storyshots Button Default 1`] = `
 <button
-  className="Button__Wrapper-sc-8y2ppg-0 eGtjch"
+  className="Button__Wrapper-sc-8y2ppg-0 gwDBuW"
   style={
     Object {
       "--button-background-color": "hsl(251deg, 83%, 65%)",
@@ -177,25 +171,47 @@ exports[`Storyshots Button Default 1`] = `
       "--button-box-shadow--hover": "0px 1.5px 3.2px rgba(0, 0, 0, 0.04), 0px 5.1px 10.7px rgba(0, 0, 0, 0.06), 0px 24px 48px rgba(0, 0, 0, 0.1)",
       "--button-color": "hsl(0deg, 0%, 100%)",
       "--button-cursor": "pointer",
+      "--button-display": "inline",
+      "--button-width": "auto",
+      "--children-opacity": 1,
     }
   }
 >
   <div
     className="Button__ChildrenWrapper-sc-8y2ppg-1 dicEjq"
-    style={
-      Object {
-        "--children-opacity": 1,
-      }
-    }
   >
     Default
   </div>
 </button>
 `;
 
+exports[`Storyshots Button Full Width 1`] = `
+<button
+  className="Button__Wrapper-sc-8y2ppg-0 gwDBuW"
+  style={
+    Object {
+      "--button-background-color": "hsl(251deg, 83%, 65%)",
+      "--button-background-color--hover": "hsl(251deg, 83%, 60%)",
+      "--button-box-shadow--hover": "0px 1.5px 3.2px rgba(0, 0, 0, 0.04), 0px 5.1px 10.7px rgba(0, 0, 0, 0.06), 0px 24px 48px rgba(0, 0, 0, 0.1)",
+      "--button-color": "hsl(0deg, 0%, 100%)",
+      "--button-cursor": "pointer",
+      "--button-display": "block",
+      "--button-width": "100%",
+      "--children-opacity": 1,
+    }
+  }
+>
+  <div
+    className="Button__ChildrenWrapper-sc-8y2ppg-1 dicEjq"
+  >
+    Full Width
+  </div>
+</button>
+`;
+
 exports[`Storyshots Button Inactive 1`] = `
 <button
-  className="Button__Wrapper-sc-8y2ppg-0 eGtjch"
+  className="Button__Wrapper-sc-8y2ppg-0 gwDBuW"
   style={
     Object {
       "--button-background-color": "hsl(0deg, 0%, 80%)",
@@ -203,16 +219,14 @@ exports[`Storyshots Button Inactive 1`] = `
       "--button-box-shadow--hover": null,
       "--button-color": "hsl(0deg, 0%, 20%)",
       "--button-cursor": "not-allowed",
+      "--button-display": "inline",
+      "--button-width": "auto",
+      "--children-opacity": 1,
     }
   }
 >
   <div
     className="Button__ChildrenWrapper-sc-8y2ppg-1 dicEjq"
-    style={
-      Object {
-        "--children-opacity": 1,
-      }
-    }
   >
     Inactive
   </div>
@@ -221,7 +235,7 @@ exports[`Storyshots Button Inactive 1`] = `
 
 exports[`Storyshots Button Loading 1`] = `
 <button
-  className="Button__Wrapper-sc-8y2ppg-0 eGtjch"
+  className="Button__Wrapper-sc-8y2ppg-0 gwDBuW"
   style={
     Object {
       "--button-background-color": "hsl(251deg, 83%, 65%)",
@@ -229,16 +243,14 @@ exports[`Storyshots Button Loading 1`] = `
       "--button-box-shadow--hover": "0px 1.5px 3.2px rgba(0, 0, 0, 0.04), 0px 5.1px 10.7px rgba(0, 0, 0, 0.06), 0px 24px 48px rgba(0, 0, 0, 0.1)",
       "--button-color": "hsl(0deg, 0%, 100%)",
       "--button-cursor": "pointer",
+      "--button-display": "inline",
+      "--button-width": "auto",
+      "--children-opacity": 0,
     }
   }
 >
   <div
     className="Button__ChildrenWrapper-sc-8y2ppg-1 dicEjq"
-    style={
-      Object {
-        "--children-opacity": 0,
-      }
-    }
   >
     Loading
   </div>

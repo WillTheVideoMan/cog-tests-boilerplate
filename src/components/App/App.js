@@ -46,7 +46,10 @@ const App = () => {
                     <ul>
                         <li>Not signed in</li>
                         <li>
-                            <Button handleClick={() => signIn()} variant={'default'}>
+                            <Button
+                                handleClick={() => signIn()}
+                                variant={'default'}
+                                fullWidth={true}>
                                 Sign In
                             </Button>
                         </li>
@@ -61,7 +64,10 @@ const App = () => {
                             super secret admin.
                         </li>
                         <li>
-                            <Button handleClick={() => signIn()} variant={'default'}>
+                            <Button
+                                handleClick={() => signOut()}
+                                variant={'default'}
+                                fullWidth={true}>
                                 Sign Out
                             </Button>
                         </li>
@@ -87,7 +93,8 @@ const App = () => {
                             handleClick={() => {
                                 throw new Error('A Client-side Error that Sentry will see.');
                             }}
-                            variant={'danger'}>
+                            variant={'danger'}
+                            fullWidth={true}>
                             Trigger
                         </Button>
                     </li>

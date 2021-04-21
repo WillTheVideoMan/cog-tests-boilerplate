@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { COLORS, SHADOWS } from '../../constants';
+import PropTypes from 'prop-types';
 
 /**
  * From SpinKit: Circle Fade
@@ -81,6 +81,10 @@ const Spinner = ({ size, ...delegated }) => {
             <Blip style={{ '--blip-rotation': '0deg', '--blip-animation-delay': '0s' }} />
         </Wrapper>
     );
+};
+
+Spinner.propTypes = {
+    size: PropTypes.number
 };
 
 export default Spinner;

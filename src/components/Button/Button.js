@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import { COLORS, SHADOWS } from '../../constants';
 import Spinner from '../Spinner';
 
@@ -111,6 +112,14 @@ const Button = ({ handleClick, variant, loading, fullWidth, children, ...delegat
             )}
         </Wrapper>
     );
+};
+
+Button.propTypes = {
+    handleClick: PropTypes.function,
+    variant: PropTypes.string,
+    loading: PropTypes.boolean,
+    fullWidth: PropTypes.boolean,
+    children: PropTypes.node
 };
 
 export default Button;
