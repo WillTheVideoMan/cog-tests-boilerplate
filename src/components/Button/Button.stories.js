@@ -7,7 +7,7 @@ export default {
     argTypes: {
         handleClick: { action: 'handle click' },
         variant: {
-            control: { type: 'select', options: ['default', 'danger', 'confirm', 'inactive'] }
+            control: { type: 'select', options: ['default', 'danger', 'confirm', 'ghost'] }
         }
     }
 };
@@ -15,19 +15,55 @@ export default {
 const Template = (args) => <Button {...args} />;
 
 export const Default = Template.bind({});
-Default.args = { children: 'Default', variant: 'default', loading: false, fullWidth: false };
+Default.args = {
+    children: 'Default',
+    variant: 'default',
+    active: true,
+    loading: false,
+    fullWidth: false
+};
 
 export const Confirm = Template.bind({});
-Confirm.args = { children: 'Confirm', variant: 'confirm', loading: false, fullWidth: false };
+Confirm.args = {
+    children: 'Confirm',
+    variant: 'confirm',
+    active: true,
+    loading: false,
+    fullWidth: false
+};
 
 export const Danger = Template.bind({});
-Danger.args = { children: 'Danger', variant: 'danger', loading: false, fullWidth: false };
+Danger.args = {
+    children: 'Danger',
+    variant: 'danger',
+    active: true,
+    loading: false,
+    fullWidth: false
+};
 
 export const Inactive = Template.bind({});
-Inactive.args = { children: 'Inactive', variant: 'inactive', loading: false, fullWidth: false };
+Inactive.args = {
+    children: 'Inactive',
+    variant: 'ghost',
+    active: false,
+    loading: false,
+    fullWidth: false
+};
 
 export const Loading = Template.bind({});
-Loading.args = { children: 'Loading', variant: 'default', loading: true, fullWidth: false };
+Loading.args = {
+    children: 'Loading',
+    variant: 'default',
+    active: true,
+    loading: true,
+    fullWidth: false
+};
 
 export const FullWidth = Template.bind({});
-FullWidth.args = { children: 'Full Width', variant: 'default', loading: false, fullWidth: true };
+FullWidth.args = {
+    children: 'Full Width',
+    variant: 'default',
+    active: true,
+    loading: false,
+    fullWidth: true
+};

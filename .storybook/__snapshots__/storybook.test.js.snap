@@ -46,6 +46,7 @@ exports[`Storyshots App Default 1`] = `
       <li>
         <button
           className="Button__Wrapper-sc-8y2ppg-0 gwDBuW"
+          disabled={true}
           onClick={[Function]}
           style={
             Object {
@@ -53,7 +54,7 @@ exports[`Storyshots App Default 1`] = `
               "--button-background-color--hover": "hsl(356deg, 74%, 47%)",
               "--button-box-shadow--hover": "0px 1.5px 3.2px rgba(0, 0, 0, 0.04), 0px 5.1px 10.7px rgba(0, 0, 0, 0.06), 0px 24px 48px rgba(0, 0, 0, 0.1)",
               "--button-color": "hsl(0deg, 0%, 100%)",
-              "--button-cursor": "pointer",
+              "--button-cursor": "not-allowed",
               "--button-display": "block",
               "--button-width": "100%",
               "--children-opacity": 1,
@@ -116,6 +117,7 @@ exports[`Storyshots App Default 1`] = `
 exports[`Storyshots Button Confirm 1`] = `
 <button
   className="Button__Wrapper-sc-8y2ppg-0 gwDBuW"
+  disabled={false}
   style={
     Object {
       "--button-background-color": "hsl(121deg, 90%, 81%)",
@@ -140,6 +142,7 @@ exports[`Storyshots Button Confirm 1`] = `
 exports[`Storyshots Button Danger 1`] = `
 <button
   className="Button__Wrapper-sc-8y2ppg-0 gwDBuW"
+  disabled={false}
   style={
     Object {
       "--button-background-color": "hsl(356deg, 74%, 52%)",
@@ -164,6 +167,7 @@ exports[`Storyshots Button Danger 1`] = `
 exports[`Storyshots Button Default 1`] = `
 <button
   className="Button__Wrapper-sc-8y2ppg-0 gwDBuW"
+  disabled={false}
   style={
     Object {
       "--button-background-color": "hsl(251deg, 83%, 65%)",
@@ -188,6 +192,7 @@ exports[`Storyshots Button Default 1`] = `
 exports[`Storyshots Button Full Width 1`] = `
 <button
   className="Button__Wrapper-sc-8y2ppg-0 gwDBuW"
+  disabled={false}
   style={
     Object {
       "--button-background-color": "hsl(251deg, 83%, 65%)",
@@ -212,11 +217,11 @@ exports[`Storyshots Button Full Width 1`] = `
 exports[`Storyshots Button Inactive 1`] = `
 <button
   className="Button__Wrapper-sc-8y2ppg-0 gwDBuW"
+  disabled={true}
   style={
     Object {
       "--button-background-color": "hsl(0deg, 0%, 80%)",
       "--button-background-color--hover": "hsl(0deg, 0%, 80%)",
-      "--button-box-shadow--hover": null,
       "--button-color": "hsl(0deg, 0%, 20%)",
       "--button-cursor": "not-allowed",
       "--button-display": "inline",
@@ -236,13 +241,14 @@ exports[`Storyshots Button Inactive 1`] = `
 exports[`Storyshots Button Loading 1`] = `
 <button
   className="Button__Wrapper-sc-8y2ppg-0 gwDBuW"
+  disabled={false}
   style={
     Object {
       "--button-background-color": "hsl(251deg, 83%, 65%)",
       "--button-background-color--hover": "hsl(251deg, 83%, 60%)",
       "--button-box-shadow--hover": "0px 1.5px 3.2px rgba(0, 0, 0, 0.04), 0px 5.1px 10.7px rgba(0, 0, 0, 0.06), 0px 24px 48px rgba(0, 0, 0, 0.1)",
       "--button-color": "hsl(0deg, 0%, 100%)",
-      "--button-cursor": "pointer",
+      "--button-cursor": "wait",
       "--button-display": "inline",
       "--button-width": "auto",
       "--children-opacity": 0,
@@ -614,6 +620,64 @@ exports[`Storyshots Spinner Light 1`] = `
         "--blip-rotation": "0deg",
       }
     }
+  />
+</div>
+`;
+
+exports[`Storyshots TextInput Default 1`] = `
+<div
+  className="TextInput__Wrapper-sc-5gm92g-0 eQfowR"
+  style={
+    Object {
+      "--input-box-shadow--hover": "0px 1.5px 3.2px rgba(0, 0, 0, 0.04), 0px 5.1px 10.7px rgba(0, 0, 0, 0.06), 0px 24px 48px rgba(0, 0, 0, 0.1)",
+      "--input-color": "hsl(0deg, 0%, 20%)",
+      "--input-cursor": "pointer",
+      "--input-placeholder-color": "hsl(0deg, 0%, 60%)",
+    }
+  }
+>
+  <label
+    className="TextInput__Label-sc-5gm92g-1 jOHCtR"
+    for="Email"
+  >
+    Email
+  </label>
+  <input
+    className="TextInput__Input-sc-5gm92g-2 kIVsjn"
+    disabled={false}
+    id="Email"
+    placeholder="joe@smith.com"
+    type="text"
+    value=""
+  />
+</div>
+`;
+
+exports[`Storyshots TextInput Inactive 1`] = `
+<div
+  className="TextInput__Wrapper-sc-5gm92g-0 eQfowR"
+  style={
+    Object {
+      "--input-box-shadow--hover": null,
+      "--input-color": "hsl(0deg, 0%, 60%)",
+      "--input-cursor": "not-allowed",
+      "--input-placeholder-color": "hsl(0deg, 0%, 60%)",
+    }
+  }
+>
+  <label
+    className="TextInput__Label-sc-5gm92g-1 jOHCtR"
+    for="Email"
+  >
+    Email
+  </label>
+  <input
+    className="TextInput__Input-sc-5gm92g-2 kIVsjn"
+    disabled={true}
+    id="Email"
+    placeholder="joe@smith.com"
+    type="text"
+    value=""
   />
 </div>
 `;

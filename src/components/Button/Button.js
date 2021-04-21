@@ -43,42 +43,44 @@ const SpinnerWrapper = styled.div`
 
 const VARIANTS = {
     default: {
-        '--button-cursor': 'pointer',
         '--button-color': COLORS.white,
         '--button-background-color': COLORS.primary.default,
         '--button-background-color--hover': COLORS.primary.darker,
         '--button-box-shadow--hover': SHADOWS.small
     },
     danger: {
-        '--button-cursor': 'pointer',
         '--button-color': COLORS.white,
         '--button-background-color': COLORS.bad.default,
         '--button-background-color--hover': COLORS.bad.darker,
         '--button-box-shadow--hover': SHADOWS.small
     },
     confirm: {
-        '--button-cursor': 'pointer',
         '--button-color': COLORS.grey[200],
         '--button-background-color': COLORS.good.default,
         '--button-background-color--hover': COLORS.good.darker,
         '--button-box-shadow--hover': SHADOWS.small
     },
-    inactive: {
-        '--button-cursor': 'not-allowed',
+    ghost: {
         '--button-color': COLORS.grey[200],
         '--button-background-color': COLORS.grey[800],
-        '--button-background-color--hover': COLORS.grey[800],
-        '--button-box-shadow--hover': null
+        '--button-background-color--hover': COLORS.grey[800]
     }
 };
 
-const STATES = {
+const LOADING_STATES = {
     loading: {
-        '--children-opacity': 0
+        '--children-opacity': 0,
+        '--button-cursor': 'wait'
     },
-    active: {
-        '--children-opacity': 1
+    ready: {
+        '--children-opacity': 1,
+        '--button-cursor': 'pointer'
     }
+};
+
+const ACTIVE_STATES = {
+    active: {},
+    inactive: { '--button-cursor': 'not-allowed' }
 };
 
 const WIDTHS = {
@@ -92,18 +94,19 @@ const WIDTHS = {
     }
 };
 
-const Button = ({ handleClick, variant, loading, fullWidth, children, ...delegated }) => {
+const Button = ({ handleClick, variant, active, loading, fullWidth, children, ...delegated }) => {
     const variantStyles = VARIANTS[variant];
     if (!variantStyles) throw new Error(`No button variant found for variant: ${variant}`);
 
     const styles = {
         ...variantStyles,
-        ...STATES[loading ? 'loading' : 'active'],
+        ...LOADING_STATES[loading ? 'loading' : 'ready'],
+        ...ACTIVE_STATES[active ? 'active' : 'inactive'],
         ...WIDTHS[fullWidth ? 'fullWidth' : 'content']
     };
 
     return (
-        <Wrapper {...delegated} style={styles} onClick={handleClick}>
+        <Wrapper {...delegated} style={styles} onClick={handleClick} disabled={!active}>
             <ChildrenWrapper>{children}</ChildrenWrapper>
             {loading && (
                 <SpinnerWrapper>
@@ -115,10 +118,11 @@ const Button = ({ handleClick, variant, loading, fullWidth, children, ...delegat
 };
 
 Button.propTypes = {
-    handleClick: PropTypes.function,
+    handleClick: PropTypes.func,
     variant: PropTypes.string,
-    loading: PropTypes.boolean,
-    fullWidth: PropTypes.boolean,
+    active: PropTypes.bool,
+    loading: PropTypes.bool,
+    fullWidth: PropTypes.bool,
     children: PropTypes.node
 };
 

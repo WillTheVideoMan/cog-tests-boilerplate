@@ -1,5 +1,4 @@
 import { createGlobalStyle } from 'styled-components';
-import { COLORS } from '../../constants';
 
 const GlobalStyles = createGlobalStyle`
     /* http://meyerweb.com/eric/tools/css/reset/ 
@@ -58,8 +57,7 @@ const GlobalStyles = createGlobalStyle`
         outline: none;
       }
     *:focus-visible{
-        outline: none;
-        box-shadow: 0 0 0 3px ${COLORS.secondary.lighter};
+        outline-offset: 4px;
     }
     html, body, #__next {
         min-height: 100%;
