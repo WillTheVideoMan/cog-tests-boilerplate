@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { signIn, signOut, useSession } from 'next-auth/client';
+import Button from '../Button';
 
 const Title = styled.h1`
     color: red;
@@ -18,10 +19,12 @@ const Label = styled.p`
     position: absolute;
     top: -12px;
     background: white;
-    padding-left: 4px;
+    padding-left: 8px;
     margin-left: -4px;
-    padding-right: 4px;
+    padding-right: 8px;
     font-weight: bold;
+    border: 2px dashed black;
+    border-radius: 8px;
 `;
 
 const Wrapper = styled.div`
@@ -29,12 +32,6 @@ const Wrapper = styled.div`
     margin: auto;
     display: grid;
     gap: 16px;
-`;
-
-const ErrorTrigger = styled.button`
-    background-color: red;
-    color: white;
-    margin-left: 8px;
 `;
 
 /**
@@ -51,7 +48,9 @@ const App = () => {
                     <ul>
                         <li>Not signed in</li>
                         <li>
-                            <button onClick={() => signIn()}>Sign In</button>
+                            <Button handleClick={() => signIn()} variant={'default'}>
+                                Sign In
+                            </Button>
                         </li>
                     </ul>
                 )}
@@ -64,7 +63,9 @@ const App = () => {
                             super secret admin.
                         </li>
                         <li>
-                            <button onClick={() => signOut()}>Sign Out</button>
+                            <Button handleClick={() => signIn()} variant={'default'}>
+                                Sign Out
+                            </Button>
                         </li>
                     </ul>
                 )}
@@ -82,14 +83,15 @@ const App = () => {
                         <a href="/api/admin/sentry-example">Visit Here</a> to send an API request
                         test error to Sentry.
                     </li>
+                    <li>Click to trigger a client-side error:</li>
                     <li>
-                        Click to trigger a client-side error:
-                        <ErrorTrigger
-                            onClick={() => {
+                        <Button
+                            handleClick={() => {
                                 throw new Error('A Client-side Error that Sentry will see.');
-                            }}>
+                            }}
+                            variant={'danger'}>
                             Trigger
-                        </ErrorTrigger>
+                        </Button>
                     </li>
                 </ul>
             </Area>

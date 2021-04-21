@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import { COLORS } from '../../constants';
 
 const GlobalStyles = createGlobalStyle`
     /* http://meyerweb.com/eric/tools/css/reset/ 
@@ -51,7 +52,14 @@ const GlobalStyles = createGlobalStyle`
     *:after {
         box-sizing: border-box;
         line-height: 1.45;
-        font-family: 'Raleway', sans-serif;
+        font-family: 'Lato', sans-serif;
+    }
+    *:focus:not(:focus-visible) {
+        outline: none;
+      }
+    *:focus-visible{
+        outline: none;
+        box-shadow: 0 0 0 3px ${COLORS.secondary.lighter};
     }
     html, body, #__next {
         min-height: 100%;

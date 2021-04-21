@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots App Bruh Moment 1`] = `
+exports[`Storyshots App Default 1`] = `
 <div
   className="App__Wrapper-hlrrig-3 kdgFTo"
 >
@@ -13,7 +13,7 @@ exports[`Storyshots App Bruh Moment 1`] = `
     className="App__Area-hlrrig-1 dgSXVl"
   >
     <p
-      className="App__Label-hlrrig-2 epEudq"
+      className="App__Label-hlrrig-2 sOOEt"
     >
       Authentication
     </p>
@@ -27,7 +27,7 @@ exports[`Storyshots App Bruh Moment 1`] = `
     className="App__Area-hlrrig-1 dgSXVl"
   >
     <p
-      className="App__Label-hlrrig-2 epEudq"
+      className="App__Label-hlrrig-2 sOOEt"
     >
       Sentry
     </p>
@@ -42,11 +42,31 @@ exports[`Storyshots App Bruh Moment 1`] = `
       </li>
       <li>
         Click to trigger a client-side error:
+      </li>
+      <li>
         <button
-          className="App__ErrorTrigger-hlrrig-4 dCUbC"
+          className="Button__Wrapper-sc-8y2ppg-0 eGtjch"
           onClick={[Function]}
+          style={
+            Object {
+              "--button-background-color": "hsl(356deg, 74%, 52%)",
+              "--button-background-color--hover": "hsl(356deg, 74%, 47%)",
+              "--button-box-shadow--hover": "0px 1.5px 3.2px rgba(0, 0, 0, 0.04), 0px 5.1px 10.7px rgba(0, 0, 0, 0.06), 0px 24px 48px rgba(0, 0, 0, 0.1)",
+              "--button-color": "hsl(0deg, 0%, 100%)",
+              "--button-cursor": "pointer",
+            }
+          }
         >
-          Trigger
+          <div
+            className="Button__ChildrenWrapper-sc-8y2ppg-1 dicEjq"
+            style={
+              Object {
+                "--children-opacity": 1,
+              }
+            }
+          >
+            Trigger
+          </div>
         </button>
       </li>
     </ul>
@@ -55,7 +75,7 @@ exports[`Storyshots App Bruh Moment 1`] = `
     className="App__Area-hlrrig-1 dgSXVl"
   >
     <p
-      className="App__Label-hlrrig-2 epEudq"
+      className="App__Label-hlrrig-2 sOOEt"
     >
       Storybook
     </p>
@@ -70,7 +90,7 @@ exports[`Storyshots App Bruh Moment 1`] = `
     className="App__Area-hlrrig-1 dgSXVl"
   >
     <p
-      className="App__Label-hlrrig-2 epEudq"
+      className="App__Label-hlrrig-2 sOOEt"
     >
       Deployment Pipeline
     </p>
@@ -95,97 +115,493 @@ exports[`Storyshots App Bruh Moment 1`] = `
 </div>
 `;
 
-exports[`Storyshots App Default 1`] = `
-<div
-  className="App__Wrapper-hlrrig-3 kdgFTo"
+exports[`Storyshots Button Confirm 1`] = `
+<button
+  className="Button__Wrapper-sc-8y2ppg-0 eGtjch"
+  style={
+    Object {
+      "--button-background-color": "hsl(121deg, 90%, 81%)",
+      "--button-background-color--hover": "hsl(121deg, 90%, 76%)",
+      "--button-box-shadow--hover": "0px 1.5px 3.2px rgba(0, 0, 0, 0.04), 0px 5.1px 10.7px rgba(0, 0, 0, 0.06), 0px 24px 48px rgba(0, 0, 0, 0.1)",
+      "--button-color": "hsl(0deg, 0%, 20%)",
+      "--button-cursor": "pointer",
+    }
+  }
 >
-  <h1
-    className="App__Title-hlrrig-0 knrMkJ"
-  >
-    Cognitive Tests Boilerplate
-  </h1>
   <div
-    className="App__Area-hlrrig-1 dgSXVl"
+    className="Button__ChildrenWrapper-sc-8y2ppg-1 dicEjq"
+    style={
+      Object {
+        "--children-opacity": 1,
+      }
+    }
   >
-    <p
-      className="App__Label-hlrrig-2 epEudq"
-    >
-      Authentication
-    </p>
-    <ul>
-      <li>
-        Loading...
-      </li>
-    </ul>
+    Confirm
+  </div>
+</button>
+`;
+
+exports[`Storyshots Button Danger 1`] = `
+<button
+  className="Button__Wrapper-sc-8y2ppg-0 eGtjch"
+  style={
+    Object {
+      "--button-background-color": "hsl(356deg, 74%, 52%)",
+      "--button-background-color--hover": "hsl(356deg, 74%, 47%)",
+      "--button-box-shadow--hover": "0px 1.5px 3.2px rgba(0, 0, 0, 0.04), 0px 5.1px 10.7px rgba(0, 0, 0, 0.06), 0px 24px 48px rgba(0, 0, 0, 0.1)",
+      "--button-color": "hsl(0deg, 0%, 100%)",
+      "--button-cursor": "pointer",
+    }
+  }
+>
+  <div
+    className="Button__ChildrenWrapper-sc-8y2ppg-1 dicEjq"
+    style={
+      Object {
+        "--children-opacity": 1,
+      }
+    }
+  >
+    Danger
+  </div>
+</button>
+`;
+
+exports[`Storyshots Button Default 1`] = `
+<button
+  className="Button__Wrapper-sc-8y2ppg-0 eGtjch"
+  style={
+    Object {
+      "--button-background-color": "hsl(251deg, 83%, 65%)",
+      "--button-background-color--hover": "hsl(251deg, 83%, 60%)",
+      "--button-box-shadow--hover": "0px 1.5px 3.2px rgba(0, 0, 0, 0.04), 0px 5.1px 10.7px rgba(0, 0, 0, 0.06), 0px 24px 48px rgba(0, 0, 0, 0.1)",
+      "--button-color": "hsl(0deg, 0%, 100%)",
+      "--button-cursor": "pointer",
+    }
+  }
+>
+  <div
+    className="Button__ChildrenWrapper-sc-8y2ppg-1 dicEjq"
+    style={
+      Object {
+        "--children-opacity": 1,
+      }
+    }
+  >
+    Default
+  </div>
+</button>
+`;
+
+exports[`Storyshots Button Inactive 1`] = `
+<button
+  className="Button__Wrapper-sc-8y2ppg-0 eGtjch"
+  style={
+    Object {
+      "--button-background-color": "hsl(0deg, 0%, 80%)",
+      "--button-background-color--hover": "hsl(0deg, 0%, 80%)",
+      "--button-box-shadow--hover": null,
+      "--button-color": "hsl(0deg, 0%, 20%)",
+      "--button-cursor": "not-allowed",
+    }
+  }
+>
+  <div
+    className="Button__ChildrenWrapper-sc-8y2ppg-1 dicEjq"
+    style={
+      Object {
+        "--children-opacity": 1,
+      }
+    }
+  >
+    Inactive
+  </div>
+</button>
+`;
+
+exports[`Storyshots Button Loading 1`] = `
+<button
+  className="Button__Wrapper-sc-8y2ppg-0 eGtjch"
+  style={
+    Object {
+      "--button-background-color": "hsl(251deg, 83%, 65%)",
+      "--button-background-color--hover": "hsl(251deg, 83%, 60%)",
+      "--button-box-shadow--hover": "0px 1.5px 3.2px rgba(0, 0, 0, 0.04), 0px 5.1px 10.7px rgba(0, 0, 0, 0.06), 0px 24px 48px rgba(0, 0, 0, 0.1)",
+      "--button-color": "hsl(0deg, 0%, 100%)",
+      "--button-cursor": "pointer",
+    }
+  }
+>
+  <div
+    className="Button__ChildrenWrapper-sc-8y2ppg-1 dicEjq"
+    style={
+      Object {
+        "--children-opacity": 0,
+      }
+    }
+  >
+    Loading
   </div>
   <div
-    className="App__Area-hlrrig-1 dgSXVl"
+    className="Button__SpinnerWrapper-sc-8y2ppg-2 ixgqMv"
   >
-    <p
-      className="App__Label-hlrrig-2 epEudq"
+    <div
+      className="Spinner__Wrapper-gyi5eh-0 frxYSt"
+      style={
+        Object {
+          "--spinner-size": "24px",
+        }
+      }
     >
-      Sentry
-    </p>
-    <ul>
-      <li>
-        <a
-          href="/api/admin/sentry-example"
-        >
-          Visit Here
-        </a>
-         to send an API request test error to Sentry.
-      </li>
-      <li>
-        Click to trigger a client-side error:
-        <button
-          className="App__ErrorTrigger-hlrrig-4 dCUbC"
-          onClick={[Function]}
-        >
-          Trigger
-        </button>
-      </li>
-    </ul>
+      <div
+        className="Spinner__Blip-gyi5eh-1 beoFab"
+        style={
+          Object {
+            "--blip-animation-delay": "-1.1s",
+            "--blip-rotation": "30deg",
+          }
+        }
+      />
+      <div
+        className="Spinner__Blip-gyi5eh-1 beoFab"
+        style={
+          Object {
+            "--blip-animation-delay": "-1s",
+            "--blip-rotation": "60deg",
+          }
+        }
+      />
+      <div
+        className="Spinner__Blip-gyi5eh-1 beoFab"
+        style={
+          Object {
+            "--blip-animation-delay": "-0.9s",
+            "--blip-rotation": "90deg",
+          }
+        }
+      />
+      <div
+        className="Spinner__Blip-gyi5eh-1 beoFab"
+        style={
+          Object {
+            "--blip-animation-delay": "-0.8s",
+            "--blip-rotation": "120deg",
+          }
+        }
+      />
+      <div
+        className="Spinner__Blip-gyi5eh-1 beoFab"
+        style={
+          Object {
+            "--blip-animation-delay": "-0.7s",
+            "--blip-rotation": "150deg",
+          }
+        }
+      />
+      <div
+        className="Spinner__Blip-gyi5eh-1 beoFab"
+        style={
+          Object {
+            "--blip-animation-delay": "-0.6s",
+            "--blip-rotation": "180deg",
+          }
+        }
+      />
+      <div
+        className="Spinner__Blip-gyi5eh-1 beoFab"
+        style={
+          Object {
+            "--blip-animation-delay": "-0.5s",
+            "--blip-rotation": "210deg",
+          }
+        }
+      />
+      <div
+        className="Spinner__Blip-gyi5eh-1 beoFab"
+        style={
+          Object {
+            "--blip-animation-delay": "-0.4s",
+            "--blip-rotation": "240deg",
+          }
+        }
+      />
+      <div
+        className="Spinner__Blip-gyi5eh-1 beoFab"
+        style={
+          Object {
+            "--blip-animation-delay": "-0.3s",
+            "--blip-rotation": "270deg",
+          }
+        }
+      />
+      <div
+        className="Spinner__Blip-gyi5eh-1 beoFab"
+        style={
+          Object {
+            "--blip-animation-delay": "-0.2s",
+            "--blip-rotation": "300deg",
+          }
+        }
+      />
+      <div
+        className="Spinner__Blip-gyi5eh-1 beoFab"
+        style={
+          Object {
+            "--blip-animation-delay": "-0.1s",
+            "--blip-rotation": "330deg",
+          }
+        }
+      />
+      <div
+        className="Spinner__Blip-gyi5eh-1 beoFab"
+        style={
+          Object {
+            "--blip-animation-delay": "0s",
+            "--blip-rotation": "0deg",
+          }
+        }
+      />
+    </div>
   </div>
+</button>
+`;
+
+exports[`Storyshots Spinner Default 1`] = `
+<div
+  className="Spinner__Wrapper-gyi5eh-0 frxYSt"
+  style={
+    Object {
+      "--spinner-size": "24px",
+    }
+  }
+>
   <div
-    className="App__Area-hlrrig-1 dgSXVl"
-  >
-    <p
-      className="App__Label-hlrrig-2 epEudq"
-    >
-      Storybook
-    </p>
-    <a
-      href="https://willthevideoman.github.io/cog-tests-boilerplate/"
-    >
-      Visit Here
-    </a>
-     to see the Storybook Docs.
-  </div>
+    className="Spinner__Blip-gyi5eh-1 beoFab"
+    style={
+      Object {
+        "--blip-animation-delay": "-1.1s",
+        "--blip-rotation": "30deg",
+      }
+    }
+  />
   <div
-    className="App__Area-hlrrig-1 dgSXVl"
-  >
-    <p
-      className="App__Label-hlrrig-2 epEudq"
-    >
-      Deployment Pipeline
-    </p>
-    <ul>
-      <li>
-        Linting from ESLint
-      </li>
-      <li>
-        Formatting from Prettier
-      </li>
-      <li>
-        Testing from Jest
-      </li>
-      <li>
-         Hosting from Vercel
-      </li>
-      <li>
-        Data from FaunaDB
-      </li>
-    </ul>
-  </div>
+    className="Spinner__Blip-gyi5eh-1 beoFab"
+    style={
+      Object {
+        "--blip-animation-delay": "-1s",
+        "--blip-rotation": "60deg",
+      }
+    }
+  />
+  <div
+    className="Spinner__Blip-gyi5eh-1 beoFab"
+    style={
+      Object {
+        "--blip-animation-delay": "-0.9s",
+        "--blip-rotation": "90deg",
+      }
+    }
+  />
+  <div
+    className="Spinner__Blip-gyi5eh-1 beoFab"
+    style={
+      Object {
+        "--blip-animation-delay": "-0.8s",
+        "--blip-rotation": "120deg",
+      }
+    }
+  />
+  <div
+    className="Spinner__Blip-gyi5eh-1 beoFab"
+    style={
+      Object {
+        "--blip-animation-delay": "-0.7s",
+        "--blip-rotation": "150deg",
+      }
+    }
+  />
+  <div
+    className="Spinner__Blip-gyi5eh-1 beoFab"
+    style={
+      Object {
+        "--blip-animation-delay": "-0.6s",
+        "--blip-rotation": "180deg",
+      }
+    }
+  />
+  <div
+    className="Spinner__Blip-gyi5eh-1 beoFab"
+    style={
+      Object {
+        "--blip-animation-delay": "-0.5s",
+        "--blip-rotation": "210deg",
+      }
+    }
+  />
+  <div
+    className="Spinner__Blip-gyi5eh-1 beoFab"
+    style={
+      Object {
+        "--blip-animation-delay": "-0.4s",
+        "--blip-rotation": "240deg",
+      }
+    }
+  />
+  <div
+    className="Spinner__Blip-gyi5eh-1 beoFab"
+    style={
+      Object {
+        "--blip-animation-delay": "-0.3s",
+        "--blip-rotation": "270deg",
+      }
+    }
+  />
+  <div
+    className="Spinner__Blip-gyi5eh-1 beoFab"
+    style={
+      Object {
+        "--blip-animation-delay": "-0.2s",
+        "--blip-rotation": "300deg",
+      }
+    }
+  />
+  <div
+    className="Spinner__Blip-gyi5eh-1 beoFab"
+    style={
+      Object {
+        "--blip-animation-delay": "-0.1s",
+        "--blip-rotation": "330deg",
+      }
+    }
+  />
+  <div
+    className="Spinner__Blip-gyi5eh-1 beoFab"
+    style={
+      Object {
+        "--blip-animation-delay": "0s",
+        "--blip-rotation": "0deg",
+      }
+    }
+  />
+</div>
+`;
+
+exports[`Storyshots Spinner Light 1`] = `
+<div
+  className="Spinner__Wrapper-gyi5eh-0 frxYSt"
+  style={
+    Object {
+      "--spinner-size": "24px",
+    }
+  }
+>
+  <div
+    className="Spinner__Blip-gyi5eh-1 beoFab"
+    style={
+      Object {
+        "--blip-animation-delay": "-1.1s",
+        "--blip-rotation": "30deg",
+      }
+    }
+  />
+  <div
+    className="Spinner__Blip-gyi5eh-1 beoFab"
+    style={
+      Object {
+        "--blip-animation-delay": "-1s",
+        "--blip-rotation": "60deg",
+      }
+    }
+  />
+  <div
+    className="Spinner__Blip-gyi5eh-1 beoFab"
+    style={
+      Object {
+        "--blip-animation-delay": "-0.9s",
+        "--blip-rotation": "90deg",
+      }
+    }
+  />
+  <div
+    className="Spinner__Blip-gyi5eh-1 beoFab"
+    style={
+      Object {
+        "--blip-animation-delay": "-0.8s",
+        "--blip-rotation": "120deg",
+      }
+    }
+  />
+  <div
+    className="Spinner__Blip-gyi5eh-1 beoFab"
+    style={
+      Object {
+        "--blip-animation-delay": "-0.7s",
+        "--blip-rotation": "150deg",
+      }
+    }
+  />
+  <div
+    className="Spinner__Blip-gyi5eh-1 beoFab"
+    style={
+      Object {
+        "--blip-animation-delay": "-0.6s",
+        "--blip-rotation": "180deg",
+      }
+    }
+  />
+  <div
+    className="Spinner__Blip-gyi5eh-1 beoFab"
+    style={
+      Object {
+        "--blip-animation-delay": "-0.5s",
+        "--blip-rotation": "210deg",
+      }
+    }
+  />
+  <div
+    className="Spinner__Blip-gyi5eh-1 beoFab"
+    style={
+      Object {
+        "--blip-animation-delay": "-0.4s",
+        "--blip-rotation": "240deg",
+      }
+    }
+  />
+  <div
+    className="Spinner__Blip-gyi5eh-1 beoFab"
+    style={
+      Object {
+        "--blip-animation-delay": "-0.3s",
+        "--blip-rotation": "270deg",
+      }
+    }
+  />
+  <div
+    className="Spinner__Blip-gyi5eh-1 beoFab"
+    style={
+      Object {
+        "--blip-animation-delay": "-0.2s",
+        "--blip-rotation": "300deg",
+      }
+    }
+  />
+  <div
+    className="Spinner__Blip-gyi5eh-1 beoFab"
+    style={
+      Object {
+        "--blip-animation-delay": "-0.1s",
+        "--blip-rotation": "330deg",
+      }
+    }
+  />
+  <div
+    className="Spinner__Blip-gyi5eh-1 beoFab"
+    style={
+      Object {
+        "--blip-animation-delay": "0s",
+        "--blip-rotation": "0deg",
+      }
+    }
+  />
 </div>
 `;

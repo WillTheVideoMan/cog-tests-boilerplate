@@ -9,7 +9,4 @@ export default {
 const Template = (args) => <App {...args} />;
 
 export const Default = Template.bind({});
-Default.args = { bruh: 'moment' };
-
-export const BruhMoment = Template.bind({});
-BruhMoment.args = { bruh: 'chungus' };
+Default.args = {};
