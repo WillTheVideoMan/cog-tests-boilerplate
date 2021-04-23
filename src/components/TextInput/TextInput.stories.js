@@ -1,33 +1,46 @@
 import React from 'react';
 import TextInput from './TextInput';
+import { Formik } from 'formik';
+import * as Yup from 'yup';
 
 export default {
     title: 'TextInput',
     component: TextInput,
     argTypes: {
-        handleInput: { action: 'handle input' },
         variant: {
             control: { type: 'select', options: ['default', 'ghost'] }
         }
     }
 };
 
-const Template = (args) => <TextInput {...args} />;
+const Template = (args) => (
+    <Formik
+        initialValues={{
+            email: ''
+        }}
+        validationSchema={Yup.object({
+            email: Yup.string().email('Invalid email address').required('Required')
+        })}>
+        <TextInput {...args} />
+    </Formik>
+);
 
 export const Default = Template.bind({});
 Default.args = {
-    value: '',
-    label: 'Email',
-    placeholder: 'joe@smith.com',
+    label: 'Email Address',
     variant: 'default',
-    active: true
+    disabled: false,
+    name: 'email',
+    type: 'email',
+    placeholder: 'joe@smith.com'
 };
 
 export const Inactive = Template.bind({});
 Inactive.args = {
-    value: '',
-    label: 'Email',
-    placeholder: 'joe@smith.com',
+    label: 'Email Address',
     variant: 'ghost',
-    active: false
+    disabled: true,
+    name: 'email',
+    type: 'email',
+    placeholder: 'joe@smith.com'
 };

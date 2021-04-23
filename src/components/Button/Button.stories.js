@@ -18,7 +18,7 @@ export const Default = Template.bind({});
 Default.args = {
     children: 'Default',
     variant: 'default',
-    active: true,
+    disabled: false,
     loading: false,
     fullWidth: false
 };
@@ -27,7 +27,7 @@ export const Confirm = Template.bind({});
 Confirm.args = {
     children: 'Confirm',
     variant: 'confirm',
-    active: true,
+    disabled: false,
     loading: false,
     fullWidth: false
 };
@@ -36,7 +36,7 @@ export const Danger = Template.bind({});
 Danger.args = {
     children: 'Danger',
     variant: 'danger',
-    active: true,
+    disabled: false,
     loading: false,
     fullWidth: false
 };
@@ -45,7 +45,7 @@ export const Inactive = Template.bind({});
 Inactive.args = {
     children: 'Inactive',
     variant: 'ghost',
-    active: false,
+    disabled: true,
     loading: false,
     fullWidth: false
 };
@@ -54,7 +54,7 @@ export const Loading = Template.bind({});
 Loading.args = {
     children: 'Loading',
     variant: 'default',
-    active: true,
+    disabled: false,
     loading: true,
     fullWidth: false
 };
@@ -63,7 +63,7 @@ export const FullWidth = Template.bind({});
 FullWidth.args = {
     children: 'Full Width',
     variant: 'default',
-    active: true,
+    disabled: false,
     loading: false,
     fullWidth: true
 };

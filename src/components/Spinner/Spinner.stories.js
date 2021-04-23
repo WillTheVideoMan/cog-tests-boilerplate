@@ -15,6 +15,3 @@ const Template = (args) => <Spinner {...args} />;
 
 export const Default = Template.bind({});
 Default.args = { variant: 'dark', size: 24 };
-
-export const Light = Template.bind({});
-Light.args = { variant: 'light', size: 24 };

@@ -457,8 +457,6 @@ function Adapter(config) {
             try {
                 const { ref, data: verificationRequest } = (await faunaClient.query(FQL)) || {};
 
-                console.log(verificationRequest);
-
                 // With the verificationCallback on a provider, you can send an email, or queue
                 // an email to be sent, or perform some other action (e.g. send a text message)
                 await sendVerificationRequest({

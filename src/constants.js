@@ -21,6 +21,16 @@ export const COLORS = {
         default: 'hsl(121deg, 90%, 81%)',
         darker: 'hsl(121deg, 90%, 76%)'
     },
+    info: {
+        lighter: 'hsl(222deg, 100%, 66%)',
+        default: 'hsl(222deg, 100%, 61%)',
+        darker: 'hsl(222deg, 100%, 56%)'
+    },
+    alert: {
+        lighter: 'hsl(44deg, 98%, 67%)',
+        default: 'hsl(44deg, 98%, 62%)',
+        darker: 'hsl(44deg, 98%, 57%)'
+    },
     grey: {
         200: 'hsl(0deg, 0%, 20%)',
         400: 'hsl(0deg, 0%, 40%)',

@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import { COLORS } from '../../constants';
 
 const GlobalStyles = createGlobalStyle`
     /* http://meyerweb.com/eric/tools/css/reset/ 
@@ -54,10 +55,11 @@ const GlobalStyles = createGlobalStyle`
         font-family: 'Lato', sans-serif;
     }
     *:focus:not(:focus-visible) {
-        outline: none;
-      }
-    *:focus-visible{
-        outline-offset: 4px;
+      outline: 4px solid transparent;
+    }
+    *:focus-visible {
+      box-shadow: 0 0 0 4px ${COLORS.alert.default};
+      outline: 4px solid transparent;
     }
     html, body, #__next {
         min-height: 100%;

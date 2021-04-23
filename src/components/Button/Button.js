@@ -9,9 +9,9 @@ const Wrapper = styled.button`
     width: var(--button-width);
 
     margin: 0;
-    padding: 8px 16px;
+    padding: 8px ${16 + 2}px;
     border: none;
-    border-radius: 4px;
+    border-radius: 8px;
 
     color: var(--button-color);
 
@@ -21,7 +21,6 @@ const Wrapper = styled.button`
 
     &:hover {
         background-color: var(--button-background-color--hover);
-        box-shadow: var(--button-box-shadow--hover);
     }
 `;
 
@@ -44,21 +43,18 @@ const SpinnerWrapper = styled.div`
 const VARIANTS = {
     default: {
         '--button-color': COLORS.white,
-        '--button-background-color': COLORS.primary.default,
-        '--button-background-color--hover': COLORS.primary.darker,
-        '--button-box-shadow--hover': SHADOWS.small
+        '--button-background-color': COLORS.primary.lighter,
+        '--button-background-color--hover': COLORS.primary.darker
     },
     danger: {
         '--button-color': COLORS.white,
-        '--button-background-color': COLORS.bad.default,
-        '--button-background-color--hover': COLORS.bad.darker,
-        '--button-box-shadow--hover': SHADOWS.small
+        '--button-background-color': COLORS.bad.lighter,
+        '--button-background-color--hover': COLORS.bad.darker
     },
     confirm: {
         '--button-color': COLORS.grey[200],
-        '--button-background-color': COLORS.good.default,
-        '--button-background-color--hover': COLORS.good.darker,
-        '--button-box-shadow--hover': SHADOWS.small
+        '--button-background-color': COLORS.good.lighter,
+        '--button-background-color--hover': COLORS.good.darker
     },
     ghost: {
         '--button-color': COLORS.grey[200],
@@ -80,7 +76,7 @@ const LOADING_STATES = {
 
 const ACTIVE_STATES = {
     active: {},
-    inactive: { '--button-cursor': 'not-allowed' }
+    disabled: { '--button-cursor': 'not-allowed' }
 };
 
 const WIDTHS = {
@@ -94,19 +90,19 @@ const WIDTHS = {
     }
 };
 
-const Button = ({ handleClick, variant, active, loading, fullWidth, children, ...delegated }) => {
+const Button = ({ handleClick, variant, disabled, loading, fullWidth, children, ...delegated }) => {
     const variantStyles = VARIANTS[variant];
     if (!variantStyles) throw new Error(`No button variant found for variant: ${variant}`);
 
     const styles = {
         ...variantStyles,
         ...LOADING_STATES[loading ? 'loading' : 'ready'],
-        ...ACTIVE_STATES[active ? 'active' : 'inactive'],
+        ...ACTIVE_STATES[disabled ? 'disabled' : 'active'],
         ...WIDTHS[fullWidth ? 'fullWidth' : 'content']
     };
 
     return (
-        <Wrapper {...delegated} style={styles} onClick={handleClick} disabled={!active}>
+        <Wrapper {...delegated} style={styles} onClick={handleClick} disabled={disabled}>
             <ChildrenWrapper>{children}</ChildrenWrapper>
             {loading && (
                 <SpinnerWrapper>
@@ -120,10 +116,14 @@ const Button = ({ handleClick, variant, active, loading, fullWidth, children, ..
 Button.propTypes = {
     handleClick: PropTypes.func,
     variant: PropTypes.string,
-    active: PropTypes.bool,
+    disabled: PropTypes.bool,
     loading: PropTypes.bool,
     fullWidth: PropTypes.bool,
     children: PropTypes.node
+};
+
+Button.defaultProps = {
+    variant: 'default'
 };
 
 export default Button;
