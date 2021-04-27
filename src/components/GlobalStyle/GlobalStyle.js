@@ -62,10 +62,13 @@ const GlobalStyles = createGlobalStyle`
       outline: 4px solid transparent;
     }
     html, body, #__next {
-        min-height: 100%;
+        height: 100%;
     }
     #__next {
         isolation: isolate;
+    }
+    a {
+      color: ${COLORS.secondary.default};
     }
 `;
 

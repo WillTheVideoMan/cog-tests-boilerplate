@@ -31,6 +31,10 @@ export default NextAuth({
         signingKey: process.env.NEXTAUTH_JWT_SIGNING_PRIVATE_KEY
     },
     secret: process.env.NEXTAUTH_SECRET,
+    pages: {
+        signIn: '/auth/signin',
+        verifyRequest: '/auth/verify-request'
+    },
     callbacks: {
         async jwt(token, user) {
             if (user?.id) token.id = user.id;
@@ -41,6 +45,9 @@ export default NextAuth({
             if (token?.id) session.user.id = token.id;
             if (token?.roles) session.user.roles = token.roles;
             return session;
+        },
+        async redirect(url, baseUrl) {
+            return url.startsWith(baseUrl) ? url : baseUrl;
         }
     }
 });

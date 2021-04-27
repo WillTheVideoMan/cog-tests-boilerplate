@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import { COLORS, SHADOWS } from '../../constants';
+import { COLORS } from '../../constants';
 import Spinner from '../Spinner';
 
 const Wrapper = styled.button`

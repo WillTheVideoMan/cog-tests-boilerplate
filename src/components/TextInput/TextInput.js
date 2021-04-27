@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import { COLORS, SHADOWS } from '../../constants';
-import { useField } from 'formik';
+import { COLORS } from '../../constants';
 
 const Wrapper = styled.div`
     display: flex;
@@ -10,28 +9,24 @@ const Wrapper = styled.div`
 
 const FormLabel = styled.label`
     font-size: ${14 / 16}rem;
-    font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 2px;
-    padding: 10px ${16 + 2}px;
     color: var(--input-color);
-`;
-
-const FormError = styled.div`
-    font-size: ${14 / 16}rem;
-    font-weight: 700;
-    padding: 10px ${16 + 2}px;
-    color: var(--input-color--error);
+    margin-bottom: 8px;
 `;
 
 const Input = styled.input`
     padding: 8px 16px;
     border: none;
     border-radius: 8px;
-    border: 2px solid var(--input-color);
+    border: 2px solid var(--input-border-color);
     font-size: ${16 / 16}rem;
     color: var(--input-color);
     cursor: var(--input-cursor);
+
+    &:hover {
+        border-color: var(--input-border-color--hover);
+    }
 
     &::placeholder {
         color: var(--input-placeholder-color);
@@ -42,12 +37,16 @@ const VARIANTS = {
     default: {
         '--input-color': COLORS.grey[200],
         '--input-placeholder-color': COLORS.grey[600],
-        '--input-color--error': COLORS.bad.default
+        '--input-color--error': COLORS.bad.default,
+        '--input-border-color': COLORS.grey[400],
+        '--input-border-color--hover': COLORS.grey[200]
     },
     ghost: {
         '--input-color': COLORS.grey[600],
         '--input-placeholder-color': COLORS.grey[600],
-        '--input-color--error': COLORS.grey[600]
+        '--input-color--error': COLORS.grey[600],
+        '--input-border-color': COLORS.grey[600],
+        '--input-border-color--hover': COLORS.grey[600]
     }
 };
 
@@ -60,21 +59,19 @@ const TextInput = ({ label, variant, disabled, ...props }) => {
     const variantStyles = VARIANTS[variant];
     if (!variantStyles) throw new Error(`No input variant found for variant: ${variant}`);
 
-    const styled = { ...variantStyles, ...ACTIVE_STATES[disabled ? 'disabled' : 'inactive'] };
-
-    const [field, meta] = useField(props);
+    const styles = { ...variantStyles, ...ACTIVE_STATES[disabled ? 'disabled' : 'inactive'] };
 
     return (
-        <Wrapper style={styled}>
+        <Wrapper style={styles}>
             <FormLabel htmlFor={props.name}>{label}</FormLabel>
-            <Input {...field} {...props} disabled={disabled} />
-            {meta.touched && meta.error && <FormError>{meta.error}</FormError>}
+            <Input {...props} disabled={disabled} />
         </Wrapper>
     );
 };
 
 TextInput.propTypes = {
     label: PropTypes.string,
+    value: PropTypes.string,
     variant: PropTypes.string,
     disabled: PropTypes.bool,
     name: PropTypes.string,

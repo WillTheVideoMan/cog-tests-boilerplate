@@ -1,7 +1,5 @@
 import React from 'react';
 import TextInput from './TextInput';
-import { Formik } from 'formik';
-import * as Yup from 'yup';
 
 export default {
     title: 'TextInput',
@@ -13,21 +11,12 @@ export default {
     }
 };
 
-const Template = (args) => (
-    <Formik
-        initialValues={{
-            email: ''
-        }}
-        validationSchema={Yup.object({
-            email: Yup.string().email('Invalid email address').required('Required')
-        })}>
-        <TextInput {...args} />
-    </Formik>
-);
+const Template = (args) => <TextInput {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
     label: 'Email Address',
+    value: '',
     variant: 'default',
     disabled: false,
     name: 'email',
@@ -38,6 +27,7 @@ Default.args = {
 export const Inactive = Template.bind({});
 Inactive.args = {
     label: 'Email Address',
+    value: '',
     variant: 'ghost',
     disabled: true,
     name: 'email',
