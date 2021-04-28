@@ -67,9 +67,6 @@ const GlobalStyles = createGlobalStyle`
     #__next {
         isolation: isolate;
     }
-    a {
-      color: ${COLORS.secondary.default};
-    }
 `;
 
 export default GlobalStyles;

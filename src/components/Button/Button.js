@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import { COLORS } from '../../constants';
 import Spinner from '../Spinner';
 
-const Wrapper = styled.button`
+const wrapperStyles = `
     position: relative;
-    display: var(--button-display);
+    display: inline-block;
     width: var(--button-width);
 
     margin: 0;
@@ -14,6 +14,7 @@ const Wrapper = styled.button`
     border-radius: 8px;
 
     color: var(--button-color);
+    text-decoration: none;
 
     cursor: var(--button-cursor);
 
@@ -24,12 +25,20 @@ const Wrapper = styled.button`
     }
 `;
 
+const LinkWrapper = styled.a([wrapperStyles]);
+const ButtonWrapper = styled.button([wrapperStyles]);
+
 const ChildrenWrapper = styled.div`
     opacity: var(--children-opacity);
+    display: inline-block;
+    width: 100%;
 
     font-size: ${16 / 16}rem;
     text-transform: uppercase;
+    text-align: center;
     letter-spacing: 2px;
+
+    user-select: none;
 `;
 
 const SpinnerWrapper = styled.div`
@@ -81,16 +90,14 @@ const ACTIVE_STATES = {
 
 const WIDTHS = {
     fullWidth: {
-        '--button-display': 'block',
         '--button-width': '100%'
     },
     content: {
-        '--button-display': 'inline',
-        '--button-width': 'auto'
+        '--button-width': 'fit-content'
     }
 };
 
-const Button = ({ handleClick, variant, disabled, loading, fullWidth, children, ...delegated }) => {
+const Button = ({ component, variant, disabled, loading, fullWidth, children, ...delegated }) => {
     const variantStyles = VARIANTS[variant];
     if (!variantStyles) throw new Error(`No button variant found for variant: ${variant}`);
 
@@ -101,8 +108,13 @@ const Button = ({ handleClick, variant, disabled, loading, fullWidth, children, 
         ...WIDTHS[fullWidth ? 'fullWidth' : 'content']
     };
 
+    if (!['a', 'button'].includes(component))
+        throw new Error(`Invalid component provided to button: ${component}`);
+
+    const Wrapper = component === 'a' ? LinkWrapper : ButtonWrapper;
+
     return (
-        <Wrapper {...delegated} style={styles} onClick={handleClick} disabled={disabled}>
+        <Wrapper {...delegated} style={styles} disabled={disabled}>
             <ChildrenWrapper>{children}</ChildrenWrapper>
             {loading && (
                 <SpinnerWrapper>
@@ -114,7 +126,8 @@ const Button = ({ handleClick, variant, disabled, loading, fullWidth, children, 
 };
 
 Button.propTypes = {
-    handleClick: PropTypes.func,
+    onClick: PropTypes.func,
+    component: PropTypes.string,
     variant: PropTypes.string,
     disabled: PropTypes.bool,
     loading: PropTypes.bool,
@@ -123,7 +136,8 @@ Button.propTypes = {
 };
 
 Button.defaultProps = {
-    variant: 'default'
+    variant: 'default',
+    component: 'button'
 };
 
 export default Button;

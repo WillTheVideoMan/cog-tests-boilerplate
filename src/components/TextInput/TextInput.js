@@ -5,6 +5,7 @@ import { COLORS } from '../../constants';
 const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
+    text-align: left;
 `;
 
 const FormLabel = styled.label`

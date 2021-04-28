@@ -33,7 +33,8 @@ export default NextAuth({
     secret: process.env.NEXTAUTH_SECRET,
     pages: {
         signIn: '/auth/signin',
-        verifyRequest: '/auth/verify-request'
+        verifyRequest: '/auth/verify-request',
+        error: '/auth/error'
     },
     callbacks: {
         async jwt(token, user) {

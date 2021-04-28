@@ -4,12 +4,14 @@ export const COLORS = {
     primary: {
         lighter: 'hsl(251deg, 83%, 70%)',
         default: 'hsl(251deg, 83%, 65%)',
-        darker: 'hsl(251deg, 83%, 60%)'
+        darker: 'hsl(251deg, 83%, 60%)',
+        transparent: 'hsl(251deg, 83%, 96%)'
     },
     secondary: {
         lighter: 'hsl(23deg, 100%, 55%)',
         default: 'hsl(23deg, 100%, 50%)',
-        darker: 'hsl(23deg, 100%, 45%)'
+        darker: 'hsl(23deg, 100%, 45%)',
+        transparent: 'hsl(23deg, 100%, 96%)'
     },
     bad: {
         lighter: 'hsl(356deg, 74%, 57%)',

@@ -45,7 +45,7 @@ exports[`Storyshots App Default 1`] = `
       </li>
       <li>
         <button
-          className="Button__Wrapper-sc-8y2ppg-0 gqogdn"
+          className="Button__ButtonWrapper-sc-8y2ppg-1 cEiPjO"
           onClick={[Function]}
           style={
             Object {
@@ -53,14 +53,13 @@ exports[`Storyshots App Default 1`] = `
               "--button-background-color--hover": "hsl(356deg, 74%, 47%)",
               "--button-color": "hsl(0deg, 0%, 100%)",
               "--button-cursor": "pointer",
-              "--button-display": "block",
               "--button-width": "100%",
               "--children-opacity": 1,
             }
           }
         >
           <div
-            className="Button__ChildrenWrapper-sc-8y2ppg-1 dicEjq"
+            className="Button__ChildrenWrapper-sc-8y2ppg-2 eEPhFo"
           >
             Trigger
           </div>
@@ -112,9 +111,33 @@ exports[`Storyshots App Default 1`] = `
 </div>
 `;
 
+exports[`Storyshots Button As Link 1`] = `
+<a
+  className="Button__LinkWrapper-sc-8y2ppg-0 cZZizN"
+  disabled={false}
+  href="/"
+  style={
+    Object {
+      "--button-background-color": "hsl(251deg, 83%, 70%)",
+      "--button-background-color--hover": "hsl(251deg, 83%, 60%)",
+      "--button-color": "hsl(0deg, 0%, 100%)",
+      "--button-cursor": "pointer",
+      "--button-width": "fit-content",
+      "--children-opacity": 1,
+    }
+  }
+>
+  <div
+    className="Button__ChildrenWrapper-sc-8y2ppg-2 eEPhFo"
+  >
+    This is a Link
+  </div>
+</a>
+`;
+
 exports[`Storyshots Button Confirm 1`] = `
 <button
-  className="Button__Wrapper-sc-8y2ppg-0 gqogdn"
+  className="Button__ButtonWrapper-sc-8y2ppg-1 cEiPjO"
   disabled={false}
   style={
     Object {
@@ -122,14 +145,13 @@ exports[`Storyshots Button Confirm 1`] = `
       "--button-background-color--hover": "hsl(121deg, 90%, 76%)",
       "--button-color": "hsl(0deg, 0%, 20%)",
       "--button-cursor": "pointer",
-      "--button-display": "inline",
-      "--button-width": "auto",
+      "--button-width": "fit-content",
       "--children-opacity": 1,
     }
   }
 >
   <div
-    className="Button__ChildrenWrapper-sc-8y2ppg-1 dicEjq"
+    className="Button__ChildrenWrapper-sc-8y2ppg-2 eEPhFo"
   >
     Confirm
   </div>
@@ -138,7 +160,7 @@ exports[`Storyshots Button Confirm 1`] = `
 
 exports[`Storyshots Button Danger 1`] = `
 <button
-  className="Button__Wrapper-sc-8y2ppg-0 gqogdn"
+  className="Button__ButtonWrapper-sc-8y2ppg-1 cEiPjO"
   disabled={false}
   style={
     Object {
@@ -146,14 +168,13 @@ exports[`Storyshots Button Danger 1`] = `
       "--button-background-color--hover": "hsl(356deg, 74%, 47%)",
       "--button-color": "hsl(0deg, 0%, 100%)",
       "--button-cursor": "pointer",
-      "--button-display": "inline",
-      "--button-width": "auto",
+      "--button-width": "fit-content",
       "--children-opacity": 1,
     }
   }
 >
   <div
-    className="Button__ChildrenWrapper-sc-8y2ppg-1 dicEjq"
+    className="Button__ChildrenWrapper-sc-8y2ppg-2 eEPhFo"
   >
     Danger
   </div>
@@ -162,7 +183,7 @@ exports[`Storyshots Button Danger 1`] = `
 
 exports[`Storyshots Button Default 1`] = `
 <button
-  className="Button__Wrapper-sc-8y2ppg-0 gqogdn"
+  className="Button__ButtonWrapper-sc-8y2ppg-1 cEiPjO"
   disabled={false}
   style={
     Object {
@@ -170,14 +191,13 @@ exports[`Storyshots Button Default 1`] = `
       "--button-background-color--hover": "hsl(251deg, 83%, 60%)",
       "--button-color": "hsl(0deg, 0%, 100%)",
       "--button-cursor": "pointer",
-      "--button-display": "inline",
-      "--button-width": "auto",
+      "--button-width": "fit-content",
       "--children-opacity": 1,
     }
   }
 >
   <div
-    className="Button__ChildrenWrapper-sc-8y2ppg-1 dicEjq"
+    className="Button__ChildrenWrapper-sc-8y2ppg-2 eEPhFo"
   >
     Default
   </div>
@@ -186,7 +206,7 @@ exports[`Storyshots Button Default 1`] = `
 
 exports[`Storyshots Button Full Width 1`] = `
 <button
-  className="Button__Wrapper-sc-8y2ppg-0 gqogdn"
+  className="Button__ButtonWrapper-sc-8y2ppg-1 cEiPjO"
   disabled={false}
   style={
     Object {
@@ -194,14 +214,13 @@ exports[`Storyshots Button Full Width 1`] = `
       "--button-background-color--hover": "hsl(251deg, 83%, 60%)",
       "--button-color": "hsl(0deg, 0%, 100%)",
       "--button-cursor": "pointer",
-      "--button-display": "block",
       "--button-width": "100%",
       "--children-opacity": 1,
     }
   }
 >
   <div
-    className="Button__ChildrenWrapper-sc-8y2ppg-1 dicEjq"
+    className="Button__ChildrenWrapper-sc-8y2ppg-2 eEPhFo"
   >
     Full Width
   </div>
@@ -210,7 +229,7 @@ exports[`Storyshots Button Full Width 1`] = `
 
 exports[`Storyshots Button Inactive 1`] = `
 <button
-  className="Button__Wrapper-sc-8y2ppg-0 gqogdn"
+  className="Button__ButtonWrapper-sc-8y2ppg-1 cEiPjO"
   disabled={true}
   style={
     Object {
@@ -218,14 +237,13 @@ exports[`Storyshots Button Inactive 1`] = `
       "--button-background-color--hover": "hsl(0deg, 0%, 80%)",
       "--button-color": "hsl(0deg, 0%, 20%)",
       "--button-cursor": "not-allowed",
-      "--button-display": "inline",
-      "--button-width": "auto",
+      "--button-width": "fit-content",
       "--children-opacity": 1,
     }
   }
 >
   <div
-    className="Button__ChildrenWrapper-sc-8y2ppg-1 dicEjq"
+    className="Button__ChildrenWrapper-sc-8y2ppg-2 eEPhFo"
   >
     Inactive
   </div>
@@ -234,7 +252,7 @@ exports[`Storyshots Button Inactive 1`] = `
 
 exports[`Storyshots Button Loading 1`] = `
 <button
-  className="Button__Wrapper-sc-8y2ppg-0 gqogdn"
+  className="Button__ButtonWrapper-sc-8y2ppg-1 cEiPjO"
   disabled={false}
   style={
     Object {
@@ -242,19 +260,18 @@ exports[`Storyshots Button Loading 1`] = `
       "--button-background-color--hover": "hsl(251deg, 83%, 60%)",
       "--button-color": "hsl(0deg, 0%, 100%)",
       "--button-cursor": "wait",
-      "--button-display": "inline",
-      "--button-width": "auto",
+      "--button-width": "fit-content",
       "--children-opacity": 0,
     }
   }
 >
   <div
-    className="Button__ChildrenWrapper-sc-8y2ppg-1 dicEjq"
+    className="Button__ChildrenWrapper-sc-8y2ppg-2 eEPhFo"
   >
     Loading
   </div>
   <div
-    className="Button__SpinnerWrapper-sc-8y2ppg-2 ixgqMv"
+    className="Button__SpinnerWrapper-sc-8y2ppg-3 kTYYTi"
   >
     <div
       className="Spinner__Wrapper-gyi5eh-0 frxYSt"
@@ -499,7 +516,7 @@ exports[`Storyshots Spinner Default 1`] = `
 
 exports[`Storyshots TextInput Default 1`] = `
 <div
-  className="TextInput__Wrapper-sc-5gm92g-0 eQfowR"
+  className="TextInput__Wrapper-sc-5gm92g-0 dIStPG"
   style={
     Object {
       "--input-border-color": "hsl(0deg, 0%, 40%)",
@@ -529,7 +546,7 @@ exports[`Storyshots TextInput Default 1`] = `
 
 exports[`Storyshots TextInput Inactive 1`] = `
 <div
-  className="TextInput__Wrapper-sc-5gm92g-0 eQfowR"
+  className="TextInput__Wrapper-sc-5gm92g-0 dIStPG"
   style={
     Object {
       "--input-border-color": "hsl(0deg, 0%, 60%)",
@@ -556,4 +573,86 @@ exports[`Storyshots TextInput Inactive 1`] = `
     value=""
   />
 </div>
+`;
+
+exports[`Storyshots Wave Default 1`] = `
+<svg
+  className="Wave__SVG-sc-14esvht-0 hZSGlQ"
+  style={
+    Object {
+      "--svg-transform-rotate": "rotate(0deg)",
+    }
+  }
+  version="1.1"
+  viewBox="0 90 800 310"
+  width="100%"
+>
+  <defs>
+    <linearGradient
+      gradientTransform="rotate(90)"
+      id="linear"
+    >
+      <stop
+        offset="50%"
+        stopColor="hsl(23deg, 100%, 96%)"
+      />
+      <stop
+        offset="95%"
+        stopColor="hsl(251deg, 83%, 96%)"
+      />
+    </linearGradient>
+  </defs>
+  <g>
+    <path
+      d=" M 0 250  C 400 300 400 50 800 100  L 800 400 L 0 400 Z "
+      style={
+        Object {
+          "fill": "url(#linear)",
+          "stroke": "none",
+        }
+      }
+    />
+  </g>
+</svg>
+`;
+
+exports[`Storyshots Wave Flip 1`] = `
+<svg
+  className="Wave__SVG-sc-14esvht-0 hZSGlQ"
+  style={
+    Object {
+      "--svg-transform-rotate": "rotate(180deg)",
+    }
+  }
+  version="1.1"
+  viewBox="0 90 800 310"
+  width="100%"
+>
+  <defs>
+    <linearGradient
+      gradientTransform="rotate(90)"
+      id="linear"
+    >
+      <stop
+        offset="50%"
+        stopColor="hsl(23deg, 100%, 96%)"
+      />
+      <stop
+        offset="95%"
+        stopColor="hsl(251deg, 83%, 96%)"
+      />
+    </linearGradient>
+  </defs>
+  <g>
+    <path
+      d=" M 0 250  C 400 300 400 50 800 100  L 800 400 L 0 400 Z "
+      style={
+        Object {
+          "fill": "url(#linear)",
+          "stroke": "none",
+        }
+      }
+    />
+  </g>
+</svg>
 `;
