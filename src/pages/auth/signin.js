@@ -46,7 +46,10 @@ export default function SignIn({ csrfToken }) {
                             setRemoteError(false);
                             setRemoteSucess(false);
                             try {
-                                await signIn('email', { email: values.email, callbackUrl: '/' });
+                                await signIn('email', {
+                                    email: values.email,
+                                    callbackUrl: '/'
+                                });
                                 setRemoteSucess(true);
                             } catch (e) {
                                 setRemoteError(true);

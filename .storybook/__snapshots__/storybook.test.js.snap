@@ -288,7 +288,7 @@ exports[`Storyshots CenterCard Default 1`] = `
   className="CenterCard__Wrapper-sc-10a7mm0-0 hLOMDl"
 >
   <div
-    className="CenterCard__Card-sc-10a7mm0-1 jntdNN"
+    className="CenterCard__Card-sc-10a7mm0-1 juaUsT"
   >
     <h1
       className="CenterCard__Title-sc-10a7mm0-2 jRBZpB"
@@ -301,6 +301,10 @@ exports[`Storyshots CenterCard Default 1`] = `
     />
     This is a card that will remain in the center of a full width and height parent
   </div>
+  <span
+    className="Spacer-eszl9t-0 dbevjS"
+    size={64}
+  />
 </div>
 `;
 
@@ -360,7 +364,7 @@ exports[`Storyshots Layout With Center Card 1`] = `
       className="CenterCard__Wrapper-sc-10a7mm0-0 hLOMDl"
     >
       <div
-        className="CenterCard__Card-sc-10a7mm0-1 jntdNN"
+        className="CenterCard__Card-sc-10a7mm0-1 juaUsT"
       >
         <h1
           className="CenterCard__Title-sc-10a7mm0-2 jRBZpB"
@@ -373,6 +377,10 @@ exports[`Storyshots Layout With Center Card 1`] = `
         />
         Body of card
       </div>
+      <span
+        className="Spacer-eszl9t-0 dbevjS"
+        size={64}
+      />
     </div>
   </main>
   <footer>

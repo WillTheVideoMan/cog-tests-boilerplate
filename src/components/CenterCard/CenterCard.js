@@ -23,7 +23,7 @@ const Card = styled.div`
     padding: 16px;
     text-align: center;
     background-color: ${COLORS.white};
-    margin-top: -48px;
+    flex: 0;
 `;
 
 const Title = styled.h1`
@@ -40,6 +40,7 @@ const CenterCard = ({ title, children, ...delegated }) => {
                 <Spacer size={8} />
                 {children}
             </Card>
+            <Spacer size={64} />
         </Wrapper>
     );
 };
