@@ -9,8 +9,8 @@ import { useState } from 'react';
 import PropTypes from 'prop-types';
 import { useRouter } from 'next/router';
 import CenterCard from '../../components/CenterCard';
-import Wave from '../../components/Wave';
-import { COLORS } from '../../constants';
+import FixedBGWave from '../../components/FixedBGWave';
+import Layout from '../../components/Layout';
 
 const signInErrors = {
     oauthsignin: 'Unable to sign in with external provider.',
@@ -31,70 +31,64 @@ export default function SignIn({ csrfToken }) {
 
     return (
         <>
-            <div style={{ position: 'fixed', width: '100%', top: '15%' }}>
-                <Wave />
-                <div
-                    style={{
-                        background: COLORS.primary.transparent,
-                        height: '100vh',
-                        marginTop: '-1px;'
-                    }}></div>
-            </div>
-            <CenterCard title="Sign In">
-                <Formik
-                    initialValues={{
-                        email: '',
-                        csrfToken: ''
-                    }}
-                    validationSchema={Yup.object({
-                        email: Yup.string().email('Invalid email address').required('Required')
-                    })}
-                    onSubmit={async (values, { setSubmitting, resetForm }) => {
-                        setRemoteError(false);
-                        setRemoteSucess(false);
-                        try {
-                            await signIn('email', { email: values.email, callbackUrl: '/' });
-                            setRemoteSucess(true);
-                        } catch (e) {
-                            setRemoteError(true);
-                            resetForm(true);
-                            setSubmitting(false);
-                            throw new Error('Unable to Sign In on the Client Side.');
-                        }
-                    }}>
-                    {(formik) => (
-                        <Form>
-                            <FormikTextInput
-                                label="Email"
-                                name="email"
-                                type="email"
-                                placeholder="joe@smith.com"
-                                disabled={formik.isSubmitting}
-                            />
-                            <Spacer size={16} />
-                            <Button
-                                type="submit"
-                                loading={formik.isSubmitting || remoteSucess}
-                                disabled={formik.isSubmitting}
-                                fullWidth>
-                                Send me a Link
-                            </Button>
+            <FixedBGWave />
+            <Layout>
+                <CenterCard title="Sign In">
+                    <Formik
+                        initialValues={{
+                            email: '',
+                            csrfToken: ''
+                        }}
+                        validationSchema={Yup.object({
+                            email: Yup.string().email('Invalid email address').required('Required')
+                        })}
+                        onSubmit={async (values, { setSubmitting, resetForm }) => {
+                            setRemoteError(false);
+                            setRemoteSucess(false);
+                            try {
+                                await signIn('email', { email: values.email, callbackUrl: '/' });
+                                setRemoteSucess(true);
+                            } catch (e) {
+                                setRemoteError(true);
+                                resetForm(true);
+                                setSubmitting(false);
+                                throw new Error('Unable to Sign In on the Client Side.');
+                            }
+                        }}>
+                        {(formik) => (
+                            <Form>
+                                <FormikTextInput
+                                    label="Email"
+                                    name="email"
+                                    type="email"
+                                    placeholder="joe@smith.com"
+                                    disabled={formik.isSubmitting}
+                                />
+                                <Spacer size={16} />
+                                <Button
+                                    type="submit"
+                                    loading={formik.isSubmitting || remoteSucess}
+                                    disabled={formik.isSubmitting}
+                                    fullWidth>
+                                    Send me a Link
+                                </Button>
 
-                            {router.query.error ? (
-                                <SubtleError>{signInErrors[router.query.error]}</SubtleError>
-                            ) : (
-                                remoteError && (
-                                    <SubtleError>
-                                        There was a problem with our sign in service.
-                                    </SubtleError>
-                                )
-                            )}
+                                {router.query.error ? (
+                                    <SubtleError>{signInErrors[router.query.error]}</SubtleError>
+                                ) : (
+                                    remoteError && (
+                                        <SubtleError>
+                                            There was a problem with our sign in service.
+                                        </SubtleError>
+                                    )
+                                )}
 
-                            <input name="csrfToken" type="hidden" defaultValue={csrfToken} />
-                        </Form>
-                    )}
-                </Formik>
-            </CenterCard>
+                                <input name="csrfToken" type="hidden" defaultValue={csrfToken} />
+                            </Form>
+                        )}
+                    </Formik>
+                </CenterCard>
+            </Layout>
         </>
     );
 }

@@ -1,116 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots App Default 1`] = `
-<div
-  className="App__Wrapper-hlrrig-3 kdgFTo"
->
-  <h1
-    className="App__Title-hlrrig-0 knrMkJ"
-  >
-    Cognitive Tests Boilerplate
-  </h1>
-  <div
-    className="App__Area-hlrrig-1 dgSXVl"
-  >
-    <p
-      className="App__Label-hlrrig-2 curani"
-    >
-      Authentication
-    </p>
-    <ul>
-      <li>
-        Loading...
-      </li>
-    </ul>
-  </div>
-  <div
-    className="App__Area-hlrrig-1 dgSXVl"
-  >
-    <p
-      className="App__Label-hlrrig-2 curani"
-    >
-      Sentry
-    </p>
-    <ul>
-      <li>
-        <a
-          href="/api/admin/sentry-example"
-        >
-          Visit Here
-        </a>
-         to send an API request test error to Sentry.
-      </li>
-      <li>
-        Click to trigger a client-side error:
-      </li>
-      <li>
-        <button
-          className="Button__ButtonWrapper-sc-8y2ppg-1 cEiPjO"
-          onClick={[Function]}
-          style={
-            Object {
-              "--button-background-color": "hsl(356deg, 74%, 57%)",
-              "--button-background-color--hover": "hsl(356deg, 74%, 47%)",
-              "--button-color": "hsl(0deg, 0%, 100%)",
-              "--button-cursor": "pointer",
-              "--button-width": "100%",
-              "--children-opacity": 1,
-            }
-          }
-        >
-          <div
-            className="Button__ChildrenWrapper-sc-8y2ppg-2 eEPhFo"
-          >
-            Trigger
-          </div>
-        </button>
-      </li>
-    </ul>
-  </div>
-  <div
-    className="App__Area-hlrrig-1 dgSXVl"
-  >
-    <p
-      className="App__Label-hlrrig-2 curani"
-    >
-      Storybook
-    </p>
-    <a
-      href="https://willthevideoman.github.io/cog-tests-boilerplate/"
-    >
-      Visit Here
-    </a>
-     to see the Storybook Docs.
-  </div>
-  <div
-    className="App__Area-hlrrig-1 dgSXVl"
-  >
-    <p
-      className="App__Label-hlrrig-2 curani"
-    >
-      Deployment Pipeline
-    </p>
-    <ul>
-      <li>
-        Linting from ESLint
-      </li>
-      <li>
-        Formatting from Prettier
-      </li>
-      <li>
-        Testing from Jest
-      </li>
-      <li>
-         Hosting from Vercel
-      </li>
-      <li>
-        Data from FaunaDB
-      </li>
-    </ul>
-  </div>
-</div>
-`;
-
 exports[`Storyshots Button As Link 1`] = `
 <a
   className="Button__LinkWrapper-sc-8y2ppg-0 cZZizN"
@@ -394,6 +283,108 @@ exports[`Storyshots Button Loading 1`] = `
 </button>
 `;
 
+exports[`Storyshots CenterCard Default 1`] = `
+<div
+  className="CenterCard__Wrapper-sc-10a7mm0-0 hLOMDl"
+>
+  <div
+    className="CenterCard__Card-sc-10a7mm0-1 jntdNN"
+  >
+    <h1
+      className="CenterCard__Title-sc-10a7mm0-2 jRBZpB"
+    >
+      Center Card
+    </h1>
+    <span
+      className="Spacer-eszl9t-0 jaiFwi"
+      size={8}
+    />
+    This is a card that will remain in the center of a full width and height parent
+  </div>
+</div>
+`;
+
+exports[`Storyshots Layout Default 1`] = `
+<div
+  className="Layout__Wrapper-sc-152h13w-0 jYBAE"
+>
+  <header>
+    <h1
+      className="Layout__Title-sc-152h13w-2 jIbefR"
+    >
+      <a
+        href="/"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        Cerebello
+      </a>
+    </h1>
+  </header>
+  <main
+    className="Layout__Main-sc-152h13w-1 fnPORG"
+  >
+    Body of the App!
+  </main>
+  <footer>
+    <p
+      className="Layout__Note-sc-152h13w-3 hdQAOg"
+    >
+      © Koentges Lab 2021
+    </p>
+  </footer>
+</div>
+`;
+
+exports[`Storyshots Layout With Center Card 1`] = `
+<div
+  className="Layout__Wrapper-sc-152h13w-0 jYBAE"
+>
+  <header>
+    <h1
+      className="Layout__Title-sc-152h13w-2 jIbefR"
+    >
+      <a
+        href="/"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        Cerebello
+      </a>
+    </h1>
+  </header>
+  <main
+    className="Layout__Main-sc-152h13w-1 fnPORG"
+  >
+    <div
+      className="CenterCard__Wrapper-sc-10a7mm0-0 hLOMDl"
+    >
+      <div
+        className="CenterCard__Card-sc-10a7mm0-1 jntdNN"
+      >
+        <h1
+          className="CenterCard__Title-sc-10a7mm0-2 jRBZpB"
+        >
+          title
+        </h1>
+        <span
+          className="Spacer-eszl9t-0 jaiFwi"
+          size={8}
+        />
+        Body of card
+      </div>
+    </div>
+  </main>
+  <footer>
+    <p
+      className="Layout__Note-sc-152h13w-3 hdQAOg"
+    >
+      © Koentges Lab 2021
+    </p>
+  </footer>
+</div>
+`;
+
 exports[`Storyshots Spinner Default 1`] = `
 <div
   className="Spinner__Wrapper-gyi5eh-0 frxYSt"
@@ -511,6 +502,14 @@ exports[`Storyshots Spinner Default 1`] = `
       }
     }
   />
+</div>
+`;
+
+exports[`Storyshots SubtleError Default 1`] = `
+<div
+  className="SubtleError-sc-1ad23du-0 dNPUwa"
+>
+  This is a subtle error
 </div>
 `;
 

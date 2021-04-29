@@ -1,19 +1,23 @@
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import Spacer from '../Spacer';
-import MaxWidthWrapper from '../MaxWidthWrapper';
 import { COLORS, SHADOWS } from '../../constants';
 
-const Wrapper = styled(MaxWidthWrapper)`
-    max-width: 384px;
+const Wrapper = styled.div`
+    width: 100%;
     min-height: 100%;
+    max-width: 384px;
+    padding: 0;
+    margin-left: auto;
+    margin-right: auto;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
-    position: relative;
 `;
 
 const Card = styled.div`
+    color: ${COLORS.grey[200]};
     box-shadow: ${SHADOWS.large};
     border-radius: 16px;
     padding: 16px;

@@ -5,6 +5,8 @@ import Button from '../../components/Button';
 
 import { useRouter } from 'next/router';
 import CenterCard from '../../components/CenterCard';
+import FixedBGWave from '../../components/FixedBGWave';
+import Layout from '../../components/Layout';
 
 const authErrors = {
     configuration: {
@@ -35,11 +37,9 @@ const authErrors = {
         ),
         action: (
             <Link href="/auth/signin" passHref>
-                <>
-                    <Button component="a" fullWidth>
-                        Try Again
-                    </Button>
-                </>
+                <Button component="a" fullWidth>
+                    Try Again
+                </Button>
             </Link>
         )
     },
@@ -53,11 +53,9 @@ const authErrors = {
         ),
         action: (
             <Link href="/" passHref>
-                <>
-                    <Button component="a" fullWidth>
-                        Go Home
-                    </Button>
-                </>
+                <Button component="a" fullWidth>
+                    Go Home
+                </Button>
             </Link>
         )
     }
@@ -65,14 +63,24 @@ const authErrors = {
 
 export default function SignIn() {
     const router = useRouter();
-    const queryError = router.query.error;
-    console.log(queryError);
-    const { title, message, action } = authErrors[queryError ?? 'default'];
+    const queryError = router.query?.error?.toLowerCase();
+    const { title, message, action } = authErrors[queryError] ?? authErrors['default'];
     return (
-        <CenterCard title={title}>
-            {message}
-            <Spacer size={24} />
-            {action}
-        </CenterCard>
+        <>
+            <FixedBGWave />
+            <Layout>
+                {queryError && (
+                    <CenterCard title={title}>
+                        {message}
+                        {action && (
+                            <>
+                                <Spacer size={24} />
+                                {action}
+                            </>
+                        )}
+                    </CenterCard>
+                )}
+            </Layout>
+        </>
     );
 }
