@@ -5,6 +5,7 @@ import CenterCard from '../components/CenterCard';
 import FixedBGWave from '../components/FixedBGWave';
 import Layout from '../components/Layout';
 import Spacer from '../components/Spacer';
+import Spinner from '../components/Spinner';
 import Link from 'next/link';
 
 const Area = styled.div`
@@ -70,7 +71,7 @@ const App = () => {
 
                         {loading && (
                             <ul>
-                                <li>Loading...</li>
+                                <Spinner size={24} />
                             </ul>
                         )}
                     </Area>

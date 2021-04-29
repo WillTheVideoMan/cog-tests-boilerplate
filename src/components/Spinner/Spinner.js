@@ -8,6 +8,7 @@ import PropTypes from 'prop-types';
  */
 
 const Wrapper = styled.div`
+    margin: auto;
     width: var(--spinner-size);
     height: var(--spinner-size);
     position: relative;

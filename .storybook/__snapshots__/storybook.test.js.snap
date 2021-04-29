@@ -163,7 +163,7 @@ exports[`Storyshots Button Loading 1`] = `
     className="Button__SpinnerWrapper-sc-8y2ppg-3 kTYYTi"
   >
     <div
-      className="Spinner__Wrapper-gyi5eh-0 frxYSt"
+      className="Spinner__Wrapper-gyi5eh-0 kazxNx"
       style={
         Object {
           "--spinner-size": "24px",
@@ -387,7 +387,7 @@ exports[`Storyshots Layout With Center Card 1`] = `
 
 exports[`Storyshots Spinner Default 1`] = `
 <div
-  className="Spinner__Wrapper-gyi5eh-0 frxYSt"
+  className="Spinner__Wrapper-gyi5eh-0 kazxNx"
   style={
     Object {
       "--spinner-size": "24px",
