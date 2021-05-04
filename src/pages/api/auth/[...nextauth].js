@@ -2,6 +2,7 @@ import NextAuth from 'next-auth';
 import Providers from 'next-auth/providers';
 import FaunaAdapter from '../../../../auth/fauna-adapter';
 import faunaClient from '../../../../db/fauna-client';
+import { sendVerificationRequest } from './sendVerificationRequest';
 
 export default NextAuth({
     providers: [
@@ -19,7 +20,8 @@ export default NextAuth({
                     pass: process.env.EMAIL_SERVER_PASSWORD
                 }
             },
-            from: process.env.EMAIL_FROM
+            from: process.env.EMAIL_FROM,
+            sendVerificationRequest: sendVerificationRequest
         })
     ],
     adapter: FaunaAdapter.Adapter({ faunaClient }),
